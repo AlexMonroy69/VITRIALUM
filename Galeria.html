@@ -1,319 +1,494 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Proyectos | El Punto De Los Cristales</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de proyectos de VITRIALUM DE ORIENTE. Cabinas de baño, fachadas, barandas, ventanas de aluminio y más en el Oriente Antioqueño.">
+  <title>Galería | VITRIALUM DE ORIENTE</title>
 
-    <style>
-        :root {
-            --primary: #0056b3;
-            --secondary: #121212;
-            --wa-green: #25d366;
-            --bg-light: #f8fafc;
-            --ease-fluid: cubic-bezier(0.3, 0, 0.2, 1);
-            --transition: all 0.6s var(--ease-fluid);
-            --border-radius: 30px;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: #fff; color: var(--secondary); overflow-x: hidden; line-height: 1.6; }
-
-        /* --- ESTILOS DEL LOADER --- */
-        #loader-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            transition: opacity 0.5s ease, visibility 0.5s;
-        }
-
-        .loader {
-            width: 45px;
-            height: 40px;
-            background: linear-gradient(#0000 calc(1*100%/6), var(--primary) 0 calc(3*100%/6), #0000 0),
-                        linear-gradient(#0000 calc(2*100%/6), var(--primary) 0 calc(4*100%/6), #0000 0),
-                        linear-gradient(#0000 calc(3*100%/6), var(--primary) 0 calc(5*100%/6), #0000 0);
-            background-size: 10px 400%;
-            background-repeat: no-repeat;
-            animation: matrix 1s infinite linear;
-        }
-
-        @keyframes matrix {
-            0% { background-position: 0% 100%, 50% 100%, 100% 100% }
-            100% { background-position: 0% 0%, 50% 0%, 100% 0% }
-        }
-
-        .loader-hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        /* --- ANIMACIONES DE BOTONES Y MENÚ --- */
-        @keyframes shine { 100% { left: 125%; } }
-        
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        .nav-link, .btn-wa-premium, .whatsapp-float { position: relative; overflow: hidden; }
-
-        .nav-link::after, .btn-wa-premium::after {
-            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
-            transform: skewX(-25deg); transition: 0.75s;
-        }
-        .nav-link:hover::after, .btn-wa-premium:hover::after { animation: shine 0.75s forwards; }
-
-        .nav-list { display: flex; gap: 12px; list-style: none; align-items: center; }
-        
-        .nav-link { 
-            text-decoration: none; color: var(--secondary); font-weight: 700; 
-            font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;
-            padding: 12px 18px; border-radius: 12px; transition: all 0.4s ease;
-            background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);
-            display: inline-block;
-        }
-        
-        .nav-link:hover { 
-            color: var(--primary); background: rgba(0,86,179,0.08); 
-            transform: translateY(-2px); 
-        }
-        
-        .nav-link.active { 
-            color: white; background: var(--primary); 
-            box-shadow: 0 10px 20px rgba(0,86,179,0.2); border-color: var(--primary);
-        }
-
-        .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px;
-            background: var(--wa-green); color: white;
-            width: 65px; height: 65px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px; z-index: 1000; animation: pulse-green 2s infinite;
-            text-decoration: none; transition: var(--transition);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-        }
-        .whatsapp-float:hover { transform: scale(1.1) translateY(-5px); }
-
-        .header {
-            height: 95px; background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 999;
-            display: flex; align-items: center; transition: var(--transition);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .header.scrolled { height: 75px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 25px; }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        
-        .logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
-        .logo-img { height: 65px; width: auto; transition: var(--transition); object-fit: contain; }
-        .header.scrolled .logo-img { height: 50px; }
-        .logo-text { font-weight: 800; font-size: 1.1rem; letter-spacing: 0.5px; text-transform: uppercase; }
-
-        .hero-sm {
-            height: 40vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('IMG/1.jpeg') center/cover;
-            display: flex; align-items: center; justify-content: center;
-            color: white; text-align: center;
-        }
-        .hero-sm h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -1px; }
-
-        .section-padding { padding: 100px 0; }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 35px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            height: 400px;
-            background: var(--bg-light);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s var(--ease-fluid);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(0, 86, 179, 0.9), transparent 70%);
-            display: flex; flex-direction: column; justify-content: flex-end;
-            padding: 40px; opacity: 0;
-            transition: var(--transition);
-        }
-
-        .gallery-overlay h3 { 
-            color: white; font-size: 1.4rem; font-weight: 800; 
-            transform: translateY(30px); transition: var(--transition);
-            margin-bottom: 5px;
-        }
-        .gallery-overlay p { 
-            color: rgba(255,255,255,0.9); font-size: 0.9rem; 
-            transform: translateY(30px); transition: var(--transition); 
-            transition-delay: 0.1s; font-weight: 500;
-        }
-
-        .gallery-item:hover img { transform: scale(1.15); }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-item:hover h3, .gallery-item:hover p { transform: translateY(0); }
-
-        .cta-box { 
-            background: var(--secondary); border-radius: 50px; 
-            padding: 100px 40px; text-align: center; color: white;
-            margin-bottom: 80px;
-        }
-
-        .btn-wa-premium {
-            background: var(--wa-green); color: white; padding: 22px 50px; border-radius: 100px;
-            text-decoration: none; font-weight: 700; text-transform: uppercase;
-            display: inline-flex; align-items: center; gap: 12px; transition: var(--transition);
-            margin-top: 35px; animation: pulse-green 2s infinite; letter-spacing: 1.5px;
-            font-size: 0.85rem; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
-        }
-
-        .footer { padding: 60px 0; text-align: center; background: #fff; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; }
-
-        @media (max-width: 992px) {
-            .nav-list { display: none; }
-            .gallery-grid { grid-template-columns: 1fr; gap: 25px; }
-            .gallery-item { height: 350px; }
-        }
-    </style>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/galeria.css">
 </head>
 <body>
 
-    <div id="loader-overlay">
-        <div class="loader"></div>
+  <!-- LOADER -->
+  <div id="loader-overlay">
+    <div class="loader-inner">
+      <div class="loader-logo">VITRIALUM</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
     </div>
+  </div>
 
-    <a href="https://wa.me/573122017791" class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/573008837223" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- HEADER -->
+  <header class="header" id="navbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo-box">
+        <img src="IMG/Logo.png" alt="Vitrialum de Oriente" class="logo-img">
+        <div class="logo-text">
+          <span class="brand-main">Vitrialum de Oriente</span>
+          <span class="brand-sub">Vidrio &amp; Aluminio Profesional</span>
+        </div>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="index.html"     class="nav-link">Inicio</a></li>
+          <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="Nosotros.html"  class="nav-link">Nosotros</a></li>
+          <li><a href="Galeria.html"   class="nav-link active">Galería</a></li>
+          <li><a href="Contacto.html"  class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html"     class="mobile-nav-link"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="Servicios.html" class="mobile-nav-link"><i class="fas fa-layer-group"></i> Servicios</a></li>
+      <li><a href="Nosotros.html"  class="mobile-nav-link"><i class="fas fa-users"></i> Nosotros</a></li>
+      <li><a href="Galeria.html"   class="mobile-nav-link active"><i class="fas fa-images"></i> Galería</a></li>
+      <li><a href="Contacto.html"  class="mobile-nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/573008837223" class="mobile-wa-btn" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
     </a>
+  </div>
 
-    <header class="header" id="navbar">
-        <div class="container nav-wrapper">
-            <a href="index.html" class="logo-box">
-                <img src="IMG/Logo.png" alt="Logo" class="logo-img">
-                <h1 class="logo-text">EL PUNTO DE LOS CRISTALES</h1>
-            </a>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
-                    <li><a href="Nosotros.html" class="nav-link">Nosotros</a></li>
-                    <li><a href="Galeria.html" class="nav-link active">Galería</a></li>
-                    <li><a href="Contacto.html" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- HERO SM -->
+  <section class="hero-sm">
+    <div class="hero-sm-bg" style="background-image: url('IMG/1.jpeg')"></div>
+    <div class="hero-sm-content" data-aos="zoom-out">
+      <div class="hero-sm-eyebrow">Precisión que se puede ver</div>
+      <h1>Portafolio de Proyectos</h1>
+    </div>
+  </section>
 
-    <section class="hero-sm">
-        <div class="container" data-aos="zoom-out">
-            <h1>Portafolio de Realidades</h1>
-            <p style="opacity: 0.9; letter-spacing: 4px; text-transform: uppercase; font-size: 0.9rem; font-weight: 600;">Precisión que se puede ver</p>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">
+        <i class="fas fa-times"></i>
+      </button>
+      <img class="lightbox-img" id="lightbox-img" src="" alt="">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Anterior">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Siguiente">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <main>
+    <section class="section-padding">
+      <div class="container">
+
+        <!-- Intro + Filters -->
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:48px;" data-aos="fade-up">
+          <div>
+            <span class="section-label">Nuestros Trabajos</span>
+            <h2 class="section-title">Realidades que Inspiran</h2>
+            <p style="color:var(--text-muted);margin-top:12px;max-width:520px;font-size:0.92rem;">
+              Cada proyecto refleja nuestro compromiso con la precisión, la estética y la durabilidad. Haga clic sobre cualquier imagen para ampliarla.
+            </p>
+          </div>
+          <div class="gallery-filters">
+            <button class="gal-filter-btn active" data-filter="all">Todos</button>
+            <button class="gal-filter-btn" data-filter="bano">Cabinas de Baño</button>
+            <button class="gal-filter-btn" data-filter="fachada">Fachadas</button>
+            <button class="gal-filter-btn" data-filter="aluminio">Aluminio</button>
+            <button class="gal-filter-btn" data-filter="acero">Acero Inox.</button>
+            <button class="gal-filter-btn" data-filter="espejo">Espejos</button>
+          </div>
         </div>
+
+        <!-- Gallery Masonry Grid -->
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="gallery-item" data-category="bano">
+            <img src="IMG/Galeria (1).jpeg" alt="Cabina de baño frameless en vidrio templado">
+            <div class="gallery-overlay">
+              <h3>Cabina de Baño</h3>
+              <p>Vidrio templado frameless 10 mm</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="fachada">
+            <img src="IMG/Galeria (35).jpeg" alt="Fachada flotante en vidrio y aluminio">
+            <div class="gallery-overlay">
+              <h3>Fachada Flotante</h3>
+              <p>Sistema spider — Rionegro</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="aluminio">
+            <img src="IMG/Galeria (36).jpeg" alt="Ventanas corredizas en aluminio sistema 5020">
+            <div class="gallery-overlay">
+              <h3>Ventanas Sistema 5020</h3>
+              <p>Carpintería de aluminio residencial</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="acero">
+            <img src="IMG/Galeria (37).jpeg" alt="Barandas en acero inoxidable con vidrio">
+            <div class="gallery-overlay">
+              <h3>Baranda Acero Inox. 304</h3>
+              <p>Vidrio laminado + acero pulido</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="bano">
+            <img src="IMG/Galeria (5).jpeg" alt="División de baño en vidrio templado">
+            <div class="gallery-overlay">
+              <h3>División de Baño</h3>
+              <p>Herrajes acero inoxidable 304</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="fachada">
+            <img src="IMG/Galeria (6).jpeg" alt="Vitrina comercial en aluminio y vidrio">
+            <div class="gallery-overlay">
+              <h3>Vitrina Comercial</h3>
+              <p>Aluminio y vidrio de seguridad</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="espejo">
+            <img src="IMG/Galeria (7).jpeg" alt="Espejo biselado para baño">
+            <div class="gallery-overlay">
+              <h3>Espejo Biselado</h3>
+              <p>Vidrio extra-claro con borde 3 cm</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="aluminio">
+            <img src="IMG/Galeria (8).jpeg" alt="Pérgola en aluminio y vidrio">
+            <div class="gallery-overlay">
+              <h3>Pérgola en Aluminio</h3>
+              <p>Estructura exterior — La Ceja</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="bano">
+            <img src="IMG/Galeria (9).jpeg" alt="Cabina de baño esquinera en vidrio">
+            <div class="gallery-overlay">
+              <h3>Cabina Esquinera</h3>
+              <p>Diseño a medida — El Carmen</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="fachada">
+            <img src="IMG/Galeria (10).jpeg" alt="Fachada comercial con puertas tipo banco">
+            <div class="gallery-overlay">
+              <h3>Puerta Tipo Banco</h3>
+              <p>Vidrio laminado — Marinilla</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="acero">
+            <img src="IMG/Galeria (11).jpeg" alt="Pasamanos en acero inoxidable para escalera">
+            <div class="gallery-overlay">
+              <h3>Pasamanos Escalera</h3>
+              <p>Acero inox. 304 — Guarne</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="espejo">
+            <img src="IMG/Galeria (12).jpeg" alt="Espejo decorativo con retroiluminación LED">
+            <div class="gallery-overlay">
+              <h3>Espejo con LED</h3>
+              <p>Retroiluminación integrada</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="aluminio">
+            <img src="IMG/Galeria (13).jpeg" alt="Ventanas proyectantes sistema 3831">
+            <div class="gallery-overlay">
+              <h3>Ventanas Sistema 3831</h3>
+              <p>Módulos fijos y proyectantes</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="bano">
+            <img src="IMG/Galeria (14).jpeg" alt="Cabina de baño con vidrio esmerilado">
+            <div class="gallery-overlay">
+              <h3>Baño con Esmerilado</h3>
+              <p>Privacidad y diseño integrados</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="fachada">
+            <img src="IMG/Galeria (15).jpeg" alt="Estructura de vidrio y aluminio en local comercial">
+            <div class="gallery-overlay">
+              <h3>Estructura Comercial</h3>
+              <p>Vidrio templado + perfilería</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="acero">
+            <img src="IMG/Galeria (16).jpeg" alt="Baranda exterior en acero inoxidable">
+            <div class="gallery-overlay">
+              <h3>Baranda Exterior</h3>
+              <p>Acero inox. — El Retiro</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="aluminio">
+            <img src="IMG/Galeria (17).jpeg" alt="Closet integral en aluminio y vidrio">
+            <div class="gallery-overlay">
+              <h3>Closet Integral</h3>
+              <p>Aluminio y vidrio — Residencial</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="bano">
+            <img src="IMG/Galeria (18).jpeg" alt="División de baño corrediza en vidrio templado">
+            <div class="gallery-overlay">
+              <h3>División Corrediza</h3>
+              <p>Sistema deslizante sin marco</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="espejo">
+            <img src="IMG/Galeria (19).jpeg" alt="Espejo de cuerpo entero biselado">
+            <div class="gallery-overlay">
+              <h3>Espejo Cuerpo Entero</h3>
+              <p>Bisel 4 cm — Extra-claro</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="fachada">
+            <img src="IMG/Galeria (20).jpeg" alt="Fachada flotante con vidrio reflectivo">
+            <div class="gallery-overlay">
+              <h3>Fachada Reflectiva</h3>
+              <p>Vidrio control solar — Rionegro</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="aluminio">
+            <img src="IMG/Galeria (21).jpeg" alt="Ventanas sistema 7038 monumental">
+            <div class="gallery-overlay">
+              <h3>Sistema 7038 Monumental</h3>
+              <p>Ventanería de gran formato</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="acero">
+            <img src="IMG/Galeria (22).jpeg" alt="Baranda de balcón en acero y vidrio laminado">
+            <div class="gallery-overlay">
+              <h3>Baranda de Balcón</h3>
+              <p>Vidrio laminado + acero 304</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="bano">
+            <img src="IMG/Galeria (23).jpeg" alt="Cabina de baño con vidrio grabado personalizado">
+            <div class="gallery-overlay">
+              <h3>Baño con Vidrio Grabado</h3>
+              <p>Diseño personalizado exclusivo</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="aluminio">
+            <img src="IMG/Galeria (24).jpeg" alt="Pérgola con cubierta de vidrio templado">
+            <div class="gallery-overlay">
+              <h3>Pérgola con Cubierta</h3>
+              <p>Vidrio templado 8 mm — Santuario</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="fachada">
+            <img src="IMG/Galeria (25).jpeg" alt="Vitrina en aluminio y madera para joyería">
+            <div class="gallery-overlay">
+              <h3>Vitrina para Joyería</h3>
+              <p>Aluminio, madera y vidrio</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="espejo">
+            <img src="IMG/Galeria (26).jpeg" alt="Espejo decorativo en living">
+            <div class="gallery-overlay">
+              <h3>Espejo Decorativo</h3>
+              <p>Instalación en sala — La Unión</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="acero">
+            <img src="IMG/Galeria (27).jpeg" alt="Pasamanos curvo en acero inoxidable">
+            <div class="gallery-overlay">
+              <h3>Pasamanos Curvo</h3>
+              <p>Acero inox. doblado en frío</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="bano">
+            <img src="IMG/Galeria (28).jpeg" alt="Cabina de baño minimalista con perfil negro">
+            <div class="gallery-overlay">
+              <h3>Cabina Perfil Negro</h3>
+              <p>Acabado matte — Diseño moderno</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="aluminio">
+            <img src="IMG/Galeria (29).jpeg" alt="Cocina integral en aluminio y vidrio">
+            <div class="gallery-overlay">
+              <h3>Cocina Integral</h3>
+              <p>Aluminio lacado + vidrio esmerilado</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="fachada">
+            <img src="IMG/Galeria (30).jpeg" alt="Estructura de aluminio y vidrio para local">
+            <div class="gallery-overlay">
+              <h3>Cerramiento Comercial</h3>
+              <p>Perfil aluminio + vidrio templado</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="acero">
+            <img src="IMG/Galeria (31).jpeg" alt="Baranda con tubo redondo en acero inoxidable">
+            <div class="gallery-overlay">
+              <h3>Baranda Tubo Redondo</h3>
+              <p>Acero inox. 304 pulido espejo</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="bano">
+            <img src="IMG/Galeria (32).jpeg" alt="División de baño con techo incluido">
+            <div class="gallery-overlay">
+              <h3>Cabina con Techo</h3>
+              <p>Sistema cerrado — Diseño a medida</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="espejo">
+            <img src="IMG/Galeria (33).jpeg" alt="Panel de espejo para revestimiento de muro">
+            <div class="gallery-overlay">
+              <h3>Revestimiento en Espejo</h3>
+              <p>Panel completo — Salón de belleza</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+          <div class="gallery-item" data-category="aluminio">
+            <img src="IMG/Galeria (34).jpeg" alt="Ventanas sistema 8025 para apartamento">
+            <div class="gallery-overlay">
+              <h3>Sistema 8025</h3>
+              <p>Ventanería residencial — Guarne</p>
+            </div>
+            <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+          </div>
+
+        </div><!-- /gallery-grid -->
+
+        <!-- CTA -->
+        <div style="margin-top:80px;">
+          <div class="gallery-cta" data-aos="zoom-in">
+            <h2>¿Inspirado para su Próximo Proyecto?</h2>
+            <p>Llevamos la calidad de esta galería a su obra. Contáctenos y reciba asesoría técnica sin costo.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+              <a href="Servicios.html" class="btn btn-outline-white btn-lg">
+                <i class="fas fa-layer-group"></i> Ver Servicios
+              </a>
+              <a href="https://wa.me/573008837223?text=Hola,%20vi%20su%20galería%20y%20quiero%20cotizar%20un%20proyecto" target="_blank" class="btn btn-wa btn-lg">
+                <i class="fa-brands fa-whatsapp"></i> Hablar con un Técnico
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /container -->
     </section>
+  </main>
 
-    <main class="container">
-        <section class="section-padding">
-            <div class="gallery-grid">
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (1).jpeg"><div class="gallery-overlay"><h3>Trabajo 1</h3><p>Acabado Profesional</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (2).jpeg"><div class="gallery-overlay"><h3>Trabajo 2</h3><p>Calidad Garantizada</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (3).jpeg"><div class="gallery-overlay"><h3>Trabajo 3</h3><p>Atención al Detalle</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (4).jpeg"><div class="gallery-overlay"><h3>Trabajo 4</h3><p>Diseño de Vanguardia</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (5).jpeg"><div class="gallery-overlay"><h3>Trabajo 5</h3><p>Solución a Medida</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (6).jpeg"><div class="gallery-overlay"><h3>Trabajo 6</h3><p>Materiales Premium</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (7).jpeg"><div class="gallery-overlay"><h3>Trabajo 7</h3><p>Resultado Impecable</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (8).jpeg"><div class="gallery-overlay"><h3>Trabajo 8</h3><p>Estética y Funcionalidad</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (9).jpeg"><div class="gallery-overlay"><h3>Trabajo 9</h3><p>Precisión en el Montaje</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (10).jpeg"><div class="gallery-overlay"><h3>Trabajo 10</h3><p>Innovación en Vidrio</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (11).jpeg"><div class="gallery-overlay"><h3>Trabajo 11</h3><p>Seguridad y Resistencia</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (12).jpeg"><div class="gallery-overlay"><h3>Trabajo 12</h3><p>Transparencia Total</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (13).jpeg"><div class="gallery-overlay"><h3>Trabajo 13</h3><p>Ejecución Profesional</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (14).jpeg"><div class="gallery-overlay"><h3>Trabajo 14</h3><p>Estilo Personalizado</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (15).jpeg"><div class="gallery-overlay"><h3>Trabajo 15</h3><p>Cuidado en la Obra</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (16).jpeg"><div class="gallery-overlay"><h3>Trabajo 16</h3><p>Proyecto Finalizado</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (17).jpeg"><div class="gallery-overlay"><h3>Trabajo 17</h3><p>Diseño Contemporáneo</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (18).jpeg"><div class="gallery-overlay"><h3>Trabajo 18</h3><p>Estructura Sólida</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (19).jpeg"><div class="gallery-overlay"><h3>Trabajo 19</h3><p>Elegancia en Vidrio</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (20).jpeg"><div class="gallery-overlay"><h3>Trabajo 20</h3><p>Protección y Estilo</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (21).jpeg"><div class="gallery-overlay"><h3>Trabajo 21</h3><p>Solución Arquitectónica</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (22).jpeg"><div class="gallery-overlay"><h3>Trabajo 22</h3><p>Máxima Durabilidad</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (23).jpeg"><div class="gallery-overlay"><h3>Trabajo 23</h3><p>Decoración Moderna</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (24).jpeg"><div class="gallery-overlay"><h3>Trabajo 24</h3><p>Calidad de Importación</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (25).jpeg"><div class="gallery-overlay"><h3>Trabajo 25</h3><p>Efecto Reflejante</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (26).jpeg"><div class="gallery-overlay"><h3>Trabajo 26</h3><p>Revestimiento Superior</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (27).jpeg"><div class="gallery-overlay"><h3>Trabajo 27</h3><p>Compromiso de Entrega</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (28).jpeg"><div class="gallery-overlay"><h3>Trabajo 28</h3><p>Ingeniería de Cristal</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (29).jpeg"><div class="gallery-overlay"><h3>Trabajo 29</h3><p>Minimalismo y Pureza</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (30).jpeg"><div class="gallery-overlay"><h3>Trabajo 30</h3><p>Sistema Especializado</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (31).jpeg"><div class="gallery-overlay"><h3>Trabajo 31</h3><p>Textura y Brillo</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (32).jpeg"><div class="gallery-overlay"><h3>Trabajo 32</h3><p>Resistencia Comprobada</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (33).jpeg"><div class="gallery-overlay"><h3>Trabajo 33</h3><p>Creación a Medida</p></div></div>
-                <div class="gallery-item" data-aos="fade-up"><img src="IMG/Galeria (34).jpeg"><div class("gallery-overlay")>< h3("Trabajo 34")>< p("Detalle de Excelencia")></ div ></ div >
-            </div>
-        </section>
-
-        <section class="section-padding">
-            <div class="cta-box" data-aos="zoom-in">
-                <h2 style="font-size: 2.8rem; margin-bottom: 20px; font-weight: 800;">¿Inspirado para su próximo proyecto?</h2>
-                <p style="opacity: 0.8; margin-bottom: 10px; font-size: 1.2rem;">Llevamos la calidad de esta galería a su obra.</p>
-                <a href="https://wa.me/573122017791" target="_blank" class="btn-wa-premium">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>Hablar con un técnico</span>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p style="font-weight: 700; color: var(--secondary); margin-bottom: 5px; letter-spacing: 1px;">EL PUNTO DE LOS CRISTALES</p>
-            <p>Excelencia Vidriera en Antioquia</p>
-            <p style="margin-top: 25px; opacity: 0.6; font-size: 0.75rem;">© 2026 Todos los derechos reservados.</p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-main">Vitrialum de Oriente</div>
+          <div class="brand-sub">Vidrio &amp; Aluminio Profesional</div>
+          <p>Soluciones arquitectónicas de precisión en vidrio, aluminio y acero inoxidable para el Oriente Antioqueño y toda la región.</p>
         </div>
-    </footer>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Servicios.html">Servicios</a></li>
+            <li><a href="Nosotros.html">Nosotros</a></li>
+            <li><a href="Galeria.html">Galería</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 300 883 7223</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>elpuntodeloscristales@gmail.com</span></div>
+          <div class="footer-contact-item"><i class="fas fa-location-dot"></i><span>Cl. 26 #32-33, El Carmen de Viboral, Antioquia</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 7:30am–5:00pm · Sáb 7:30am–1:00pm</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 <strong>VITRIALUM DE ORIENTE</strong>. Todos los derechos reservados.</span>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/p/el-punto-de-los-cristales-61576682337365/" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/el_punto_de_los_cristales/" target="_blank" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/573008837223" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Lógica del Loader con duración de 1 segundo
-        window.addEventListener("load", function() {
-            setTimeout(function() {
-                const loader = document.getElementById("loader-overlay");
-                loader.classList.add("loader-hidden");
-            }, 1000); 
-        });
-
-        AOS.init({ duration: 1000, once: true, easing: 'ease-out-quad' });
-
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
-    </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="JS/shared.js"></script>
+  <script src="JS/galeria.js"></script>
 </body>
 </html>
