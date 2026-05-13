@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | El Punto De Los Cristales</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #121212;
+            --wa-green: #25d366;
+            --bg-light: #f8fafc;
+            --ease-fluid: cubic-bezier(0.3, 0, 0.2, 1);
+            --transition: all 0.6s var(--ease-fluid);
+        }
+
+        /* --- PANTALLA DE CARGA --- */
+        #loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease, visibility 0.5s;
+        }
+
+        .loader {
+            width: 45px;
+            height: 40px;
+            background: linear-gradient(#0000 calc(1*100%/6), var(--primary) 0 calc(3*100%/6), #0000 0),
+                        linear-gradient(#0000 calc(2*100%/6), var(--primary) 0 calc(4*100%/6), #0000 0),
+                        linear-gradient(#0000 calc(3*100%/6), var(--primary) 0 calc(5*100%/6), #0000 0);
+            background-size: 10px 400%;
+            background-repeat: no-repeat;
+            animation: matrix 1s infinite linear;
+        }
+
+        @keyframes matrix {
+            0% { background-position: 0% 100%, 50% 100%, 100% 100% }
+            100% { background-position: 0% 0%, 50% 0%, 100% 0% }
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #fff; color: var(--secondary); overflow-x: hidden; line-height: 1.7; }
+
+        /* --- ANIMACIONES DE BOTONES Y MENÚ --- */
+        @keyframes shine { 100% { left: 125%; } }
+        
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* SHIMMER EFFECT */
+        .nav-link, .btn-wa-premium, .whatsapp-float { position: relative; overflow: hidden; }
+
+        .nav-link::after, .btn-wa-premium::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
+            transform: skewX(-25deg); transition: 0.75s;
+        }
+        .nav-link:hover::after, .btn-wa-premium:hover::after { animation: shine 0.75s forwards; }
+
+        /* --- BOTONES DEL MENÚ --- */
+        .nav-list { display: flex; gap: 12px; list-style: none; align-items: center; }
+        
+        .nav-link { 
+            text-decoration: none; color: var(--secondary); font-weight: 700; 
+            font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;
+            padding: 12px 18px; border-radius: 12px; transition: all 0.4s ease;
+            background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);
+            display: inline-block;
+        }
+        
+        .nav-link:hover { 
+            color: var(--primary); background: rgba(0,86,179,0.08); 
+            transform: translateY(-2px); 
+        }
+        
+        .nav-link.active { 
+            color: white; background: var(--primary); 
+            box-shadow: 0 10px 20px rgba(0,86,179,0.2); border-color: var(--primary);
+        }
+
+        /* --- WHATSAPP FLOTANTE --- */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--wa-green); color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; z-index: 1000; animation: pulse-green 2s infinite;
+            text-decoration: none; transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+        .whatsapp-float:hover { transform: scale(1.1) translateY(-5px); }
+
+        /* --- HEADER --- */
+        .header {
+            height: 95px; background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 999;
+            display: flex; align-items: center; transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .header.scrolled { height: 75px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 25px; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+        .logo-img { height: 65px; transition: var(--transition); }
+        .header.scrolled .logo-img { height: 50px; }
+        .logo-text { font-weight: 800; font-size: 1.1rem; text-transform: uppercase; }
+
+        /* --- HERO NOSOTROS --- */
+        .hero-sm {
+            height: 45vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('IMG/2.jpg') center/cover;
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-align: center;
+        }
+        .hero-sm h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -1px; }
+
+        /* --- SECCIONES --- */
+        .section-padding { padding: 100px 0; }
+        .about-grid { display: flex; align-items: center; gap: 60px; }
+        .about-text { flex: 1; }
+        .about-text h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 25px; position: relative; line-height: 1.2; }
+        .about-text h2::after { content: ''; display: block; width: 60px; height: 5px; background: var(--primary); margin-top: 15px; border-radius: 10px; }
+        .about-text p { margin-bottom: 20px; color: #555; font-size: 1.1rem; }
+
+        .about-image { flex: 1; border-radius: 40px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); position: relative; }
+        .about-image img { width: 100%; height: 500px; object-fit: cover; transition: transform 1.2s var(--ease-fluid); }
+        .about-image:hover img { transform: scale(1.08); }
+
+        .bg-light { background-color: var(--bg-light); border-radius: 60px 60px 0 0; }
+        .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .philosophy-card {
+            background: #fff; padding: 45px; border-radius: 40px;
+            text-align: center; border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition); position: relative;
+        }
+        .philosophy-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.05); border-color: var(--primary); }
+        .philosophy-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 25px; display: block; }
+        .philosophy-card h3 { text-transform: uppercase; font-size: 1.3rem; margin-bottom: 20px; color: var(--secondary); font-weight: 800; letter-spacing: 1px; }
+        
+        .philosophy-card ul { list-style: none; margin-top: 20px; text-align: left; display: inline-block; }
+        .philosophy-card ul li { padding: 8px 0; color: #555; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .philosophy-card ul li i { font-size: 1rem; margin-bottom: 0; }
+
+        .btn-wa-premium {
+            background: var(--wa-green); color: white; padding: 22px 45px; border-radius: 100px;
+            text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+            display: inline-flex; align-items: center; gap: 12px; transition: var(--transition);
+            margin-top: 30px; animation: pulse-green 2s infinite; font-size: 0.85rem;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        .footer { padding: 80px 0; text-align: center; background: #fff; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; }
+
+        @media (max-width: 992px) {
+            .about-grid { flex-direction: column; text-align: center; }
+            .about-text h2::after { margin: 15px auto; }
+            .about-image img { height: 350px; }
+            .nav-list { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <a href="https://wa.me/573008837223" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <header class="header" id="navbar">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-box">
+                <img src="IMG/Logo.png" alt="Logo" class="logo-img">
+                <h1 class="logo-text">EL PUNTO DE LOS CRISTALES</h1>
+            </a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
+                    <li><a href="Nosotros.html" class="nav-link active">Nosotros</a></li>
+                    <li><a href="Galeria.html" class="nav-link">Galería</a></li>
+                    <li><a href="Contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-sm">
+        <div class="container" data-aos="zoom-out">
+            <h1>Nuestra Esencia</h1>
+            <p style="opacity: 0.9; letter-spacing: 3px; text-transform: uppercase; font-weight: 600;">Más de una década transformando espacios</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="section-padding">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text" data-aos="fade-right">
+                        <h2>Compromiso y Precisión en el Oriente Antioqueño</h2>
+                        <p>En <strong>El Punto De Los Cristales</strong>, nuestra trayectoria se ha forjado bajo el pilar de la confianza. Ubicados en El Carmen de Viboral, servimos a toda la región con soluciones en vidrio que desafían los estándares convencionales.</p>
+                        <p>No somos simplemente instaladores; somos consultores técnicos que acompañan cada etapa de su obra. Desde una división de baño residencial hasta complejas fachadas comerciales, aplicamos ingeniería de precisión para garantizar durabilidad.</p>
+                        <p>Nuestro equipo humano está altamente capacitado en normativas de seguridad y manejo de cristales templados y laminados, asegurando que la estética nunca comprometa la integridad de su familia o empresa.</p>
+                    </div>
+                    <div class="about-image" data-aos="fade-left">
+                        <img src="IMG/3.jpg" alt="Instalación Profesional de Vidrios">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h2 style="font-size: 2.5rem; font-weight: 800;" data-aos="fade-up">Nuestra Filosofía Operativa</h2>
+                    <p style="color: #666; margin-top: 10px;">La base de cada proyecto exitoso.</p>
+                </div>
+                
+                <div class="philosophy-grid">
+                    <article class="philosophy-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Misión</h3>
+                        <p>Liderar el mercado vidriero mediante la entrega de productos certificados que fusionen seguridad industrial y diseño arquitectónico, superando las expectativas de tiempo y calidad de nuestros clientes.</p>
+                    </article>
+
+                    <article class="philosophy-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-eye"></i>
+                        <h3>Visión</h3>
+                        <p>Ser reconocidos para el 2030 como la principal central de soluciones en vidrio y aluminio del departamento, destacándonos por la innovación tecnológica en nuestros procesos de corte y temple.</p>
+                    </article>
+
+                    <article class="philosophy-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Valores</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Honestidad en Materiales</li>
+                            <li><i class="fas fa-check-circle"></i> Puntualidad de Entrega</li>
+                            <li><i class="fas fa-check-circle"></i> Excelencia en Acabados</li>
+                            <li><i class="fas fa-check-circle"></i> Responsabilidad Técnica</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="text-align: center; background: var(--secondary); color: white; border-radius: 0 0 60px 60px;">
+            <div class="container" data-aos="zoom-in">
+                <h2 style="font-size: 2.3rem; margin-bottom: 20px;">¿Busca seguridad y estilo?</h2>
+                <p style="opacity: 0.8; max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem;">Únase a los cientos de clientes satisfechos que han confiado su seguridad en nuestras manos. Estamos listos para asesorarle.</p>
+                <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Consultar con un Experto</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p style="font-weight: 700; color: var(--secondary); margin-bottom: 10px; letter-spacing: 1px;">EL PUNTO DE LOS CRISTALES</p>
+            <p>Calle 26 #32-33, El Carmen de Viboral, Antioquia</p>
+            <p style="margin-top: 25px; opacity: 0.6; font-size: 0.75rem;">© 2026 Ingeniería y Calidad Certificada. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true, easing: 'ease-out-quad' });
+
+        // MANEJO DE PANTALLA DE CARGA
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader-overlay');
+            setTimeout(() => {
+                loader.classList.add('loader-hidden');
+            }, 600);
+        });
+
+        // RE-ACTIVAR CARGA AL SALIR
+        document.querySelectorAll('.nav-link, .logo-box').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.includes('.html') && this.hostname === window.location.hostname) {
+                    document.getElementById('loader-overlay').classList.remove('loader-hidden');
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>
