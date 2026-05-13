@@ -1,439 +1,585 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Especializados | El Punto De Los Cristales</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios especializados de VITRIALUM DE ORIENTE: cabinas de baño, fachadas flotantes, barandas en acero inoxidable, ventanas de aluminio, pérgolas, cocinas, closets y más.">
+  <title>Servicios | VITRIALUM DE ORIENTE</title>
 
-    <style>
-        :root {
-            --primary: #0056b3;
-            --secondary: #121212;
-            --wa-green: #25d366;
-            --bg-light: #f8fafc;
-            --ease-fluid: cubic-bezier(0.3, 0, 0.2, 1);
-            --transition: all 0.6s var(--ease-fluid);
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: #fff; color: var(--secondary); overflow-x: hidden; line-height: 1.7; }
-
-        /* --- LOADER --- */
-        #loader-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            transition: opacity 0.5s ease, visibility 0.5s;
-        }
-
-        .loader {
-            width: 45px;
-            height: 40px;
-            background: linear-gradient(#0000 calc(1*100%/6), var(--primary) 0 calc(3*100%/6), #0000 0),
-                        linear-gradient(#0000 calc(2*100%/6), var(--primary) 0 calc(4*100%/6), #0000 0),
-                        linear-gradient(#0000 calc(3*100%/6), var(--primary) 0 calc(5*100%/6), #0000 0);
-            background-size: 10px 400%;
-            background-repeat: no-repeat;
-            animation: matrix 1s infinite linear;
-        }
-
-        @keyframes matrix {
-            0% { background-position: 0% 100%, 50% 100%, 100% 100% }
-            100% { background-position: 0% 0%, 50% 0%, 100% 0% }
-        }
-
-        .loader-hidden { opacity: 0; visibility: hidden; }
-
-        /* --- ANIMACIONES DE BOTONES Y MENÚ --- */
-        @keyframes shine { 100% { left: 125%; } }
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        .nav-link, .btn-wa-premium, .whatsapp-float { position: relative; overflow: hidden; }
-
-        .nav-link::after, .btn-wa-premium::after {
-            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
-            transform: skewX(-25deg); transition: 0.75s;
-        }
-        .nav-link:hover::after, .btn-wa-premium:hover::after { animation: shine 0.75s forwards; }
-
-        .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px;
-            background: var(--wa-green); color: white;
-            width: 65px; height: 65px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px; z-index: 1000; animation: pulse-green 2s infinite;
-            text-decoration: none; transition: var(--transition);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-        }
-        .whatsapp-float:hover { transform: scale(1.1) translateY(-5px); }
-
-        .nav-list { display: flex; gap: 12px; list-style: none; align-items: center; }
-        .nav-link { 
-            text-decoration: none; color: var(--secondary); font-weight: 700; 
-            font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;
-            padding: 12px 18px; border-radius: 12px; transition: all 0.4s ease;
-            background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);
-            display: inline-block;
-        }
-        .nav-link:hover { color: var(--primary); background: rgba(0,86,179,0.08); transform: translateY(-2px); }
-        .nav-link.active { color: white; background: var(--primary); box-shadow: 0 10px 20px rgba(0,86,179,0.2); border-color: var(--primary); }
-
-        .header {
-            height: 95px; background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 999;
-            display: flex; align-items: center; transition: var(--transition);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .header.scrolled { height: 75px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 25px; }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
-        .logo-img { height: 65px; transition: var(--transition); }
-        .header.scrolled .logo-img { height: 50px; }
-        .logo-text { font-weight: 800; font-size: 1.1rem; text-transform: uppercase; }
-
-        .hero-services {
-            height: 40vh;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('IMG/1.jpeg') center/cover;
-            display: flex; align-items: center; justify-content: center;
-            color: white; text-align: center;
-        }
-        .hero-services h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; }
-
-        .services-section { padding: 100px 0; }
-        .service-row { display: flex; align-items: center; gap: 60px; margin-bottom: 120px; }
-        .service-row:nth-child(even) { flex-direction: row-reverse; }
-        .service-image { flex: 1; position: relative; border-radius: 40px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
-        .service-image img { width: 100%; height: 500px; object-fit: cover; transition: transform 1.2s var(--ease-fluid); }
-        .service-row:hover .service-image img { transform: scale(1.08); }
-        
-        .service-info { flex: 1; }
-        .service-info .tag { color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; display: block; margin-bottom: 15px; }
-        .service-info h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 25px; color: var(--secondary); }
-        .service-info p { font-size: 1.1rem; color: #555; margin-bottom: 30px; }
-        
-        .service-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .service-features li { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem; color: #444; }
-        .service-features li i { color: var(--primary); font-size: 1.1rem; }
-
-        .btn-wa-premium {
-            background: var(--wa-green); color: white;
-            padding: 18px 35px; border-radius: 100px; text-decoration: none;
-            font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
-            display: inline-flex; align-items: center; gap: 12px;
-            transition: var(--transition); border: none; margin-top: 35px;
-            animation: pulse-green 2s infinite; font-size: 0.85rem;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
-        }
-        .btn-wa-premium:hover { transform: translateY(-5px); }
-
-        .tech-specs { background: var(--bg-light); padding: 80px 0; border-radius: 60px; margin-bottom: 80px; }
-        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .tech-item { text-align: center; }
-        .tech-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
-        .tech-item h4 { margin-bottom: 10px; font-weight: 700; }
-
-        .cta-footer-box { background: var(--secondary); border-radius: 50px; padding: 100px 40px; text-align: center; color: white; margin-bottom: 80px; }
-
-        @media (max-width: 992px) {
-            .service-row, .service-row:nth-child(even) { flex-direction: column; gap: 40px; text-align: center; }
-            .service-image img { height: 350px; }
-            .service-features { grid-template-columns: 1fr; text-align: left; max-width: 300px; margin: 0 auto; }
-            .nav-list { display: none; }
-        }
-    </style>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/servicios.css">
 </head>
 <body>
 
-    <div id="loader-overlay">
-        <div class="loader"></div>
+  <!-- LOADER -->
+  <div id="loader-overlay">
+    <div class="loader-inner">
+      <div class="loader-logo">VITRIALUM</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
     </div>
+  </div>
 
-    <a href="https://wa.me/573008837223" class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/573122017791" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- HEADER -->
+  <header class="header" id="navbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo-box">
+        <img src="IMG/Logo.png" alt="Vitrialum de Oriente" class="logo-img">
+        <div class="logo-text">
+          <span class="brand-main">Vitrialum de Oriente</span>
+          <span class="brand-sub">Vidrio &amp; Aluminio Profesional</span>
+        </div>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="index.html"     class="nav-link">Inicio</a></li>
+          <li><a href="Servicios.html" class="nav-link active">Servicios</a></li>
+          <li><a href="Nosotros.html"  class="nav-link">Nosotros</a></li>
+          <li><a href="Galeria.html"   class="nav-link">Galería</a></li>
+          <li><a href="Contacto.html"  class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html"     class="mobile-nav-link"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="Servicios.html" class="mobile-nav-link active"><i class="fas fa-layer-group"></i> Servicios</a></li>
+      <li><a href="Nosotros.html"  class="mobile-nav-link"><i class="fas fa-users"></i> Nosotros</a></li>
+      <li><a href="Galeria.html"   class="mobile-nav-link"><i class="fas fa-images"></i> Galería</a></li>
+      <li><a href="Contacto.html"  class="mobile-nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/573122017791" class="mobile-wa-btn" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
     </a>
+  </div>
 
-    <header class="header" id="navbar">
-        <div class="container nav-wrapper">
-            <a href="index.html" class="logo-box">
-                <img src="IMG/Logo.png" alt="Logo" class="logo-img">
-                <h1 class="logo-text">EL PUNTO DE LOS CRISTALES</h1>
+  <!-- HERO SM -->
+  <section class="hero-sm">
+    <div class="hero-sm-bg" style="background-image: url('IMG/carrousel-4.jpeg')"></div>
+    <div class="hero-sm-content" data-aos="zoom-out">
+      <div class="hero-sm-eyebrow">Ingeniería y Transformación</div>
+      <h1>Nuestros Servicios</h1>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- INTRO + FILTER -->
+    <section class="section-padding">
+      <div class="container">
+
+        <div style="text-align:center;margin-bottom:48px;" data-aos="fade-up">
+          <span class="section-label">Portafolio Completo</span>
+          <h2 class="section-title">Soluciones Integrales en Vidrio y Aluminio</h2>
+          <p style="color:var(--text-muted);margin-top:16px;max-width:640px;margin-left:auto;margin-right:auto;font-size:0.93rem;">
+            Desde cabinas de baño residenciales hasta complejas fachadas corporativas. Cada solución es fabricada e instalada con la más alta precisión técnica.
+          </p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div style="display:flex;justify-content:center;margin-bottom:16px;" data-aos="fade-up">
+          <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="vidrio">Vidrio</button>
+            <button class="filter-btn" data-filter="aluminio">Aluminio</button>
+            <button class="filter-btn" data-filter="acero">Acero Inox.</button>
+            <button class="filter-btn" data-filter="interiores">Interiores</button>
+          </div>
+        </div>
+
+        <!-- ============ SERVICE ROWS ============ -->
+
+        <!-- 1. Cabinas de Baño -->
+        <div class="service-row" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/cabinadebaño.jpeg" alt="Cabinas de Baño">
+            <span class="service-tag-overlay">Más Solicitado</span>
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Vidrio Templado</span>
+            <h2 class="service-title">Cabinas de Baño</h2>
+            <p class="service-desc">
+              Diseñamos y fabricamos cabinas de baño en vidrio templado de 8 y 10 mm con herrajes en acero inoxidable 304. Sistemas sin marco (frameless) y semienmarque para una estética limpia y moderna. Instalación en 24 horas sin obra ni polvo.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-shield-alt"></i></div> Vidrio 8 – 10 mm templado</li>
+              <li><div class="service-feature"><i class="fas fa-water"></i></div> Herrajes anticorrosión</li>
+              <li><div class="service-feature"><i class="fas fa-expand"></i></div> Sistema frameless y semienmarque</li>
+              <li><div class="service-feature"><i class="fas fa-door-open"></i></div> Puertas batientes y corredizas</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20cabina%20de%20baño" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Cabina
             </a>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="Servicios.html" class="nav-link active">Servicios</a></li>
-                    <li><a href="Nosotros.html" class="nav-link">Nosotros</a></li>
-                    <li><a href="Galeria.html" class="nav-link">Galería</a></li>
-                    <li><a href="Contacto.html" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
+          </div>
         </div>
-    </header>
 
-    <section class="hero-services">
-        <div data-aos="zoom-out">
-            <h1 style="letter-spacing: -1px;">Ingeniería y Transformación</h1>
-            <p style="opacity: 0.9; letter-spacing: 4px; text-transform: uppercase; font-size: 0.9rem; font-weight: 600;">Soluciones de Cristal de Alto Desempeño</p>
+        <!-- 2. Fachadas Flotantes -->
+        <div class="service-row reverse" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/facahdasFlotantes.jpg" alt="Fachadas Flotantes">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Arquitectura Comercial</span>
+            <h2 class="service-title">Fachadas Flotantes</h2>
+            <p class="service-desc">
+              Sistemas de acristalamiento estructural para edificios y locales comerciales. Las fachadas flotantes crean una envolvente de vidrio continua que potencia la visibilidad del negocio y maximiza el aprovechamiento de la luz natural.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-city"></i></div> Sistemas spider y perfil oculto</li>
+              <li><div class="service-feature"><i class="fas fa-volume-mute"></i></div> Vidrio termoacústico</li>
+              <li><div class="service-feature"><i class="fas fa-wind"></i></div> Resistencia estructural al viento</li>
+              <li><div class="service-feature"><i class="fas fa-gem"></i></div> Acabado de alta gama</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20fachada%20flotante" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Proyecto Comercial
+            </a>
+          </div>
         </div>
+
+        <!-- 3. Puertas tipo Banco -->
+        <div class="service-row" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/TipoBanco.jpg" alt="Puertas Tipo Banco">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Seguridad y Acceso</span>
+            <h2 class="service-title">Puertas Tipo Banco</h2>
+            <p class="service-desc">
+              Puertas en vidrio laminado de seguridad con perfilería de aluminio estructural de alta resistencia. Ideales para entidades bancarias, clínicas, oficinas jurídicas y cualquier espacio que requiera control de acceso con presencia corporativa.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-lock"></i></div> Vidrio laminado antivandálico</li>
+              <li><div class="service-feature"><i class="fas fa-fingerprint"></i></div> Sistemas de cierre automático</li>
+              <li><div class="service-feature"><i class="fas fa-ruler-combined"></i></div> Fabricación a medida</li>
+              <li><div class="service-feature"><i class="fas fa-building"></i></div> Uso comercial e institucional</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20puertas%20tipo%20banco" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Cotización
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Barandas en Acero Inoxidable -->
+        <div class="service-row reverse" data-category="acero" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/acero.png" alt="Barandas en Acero Inoxidable">
+            <span class="service-tag-overlay">Garantía de Por Vida</span>
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Acero Inoxidable 304</span>
+            <h2 class="service-title">Barandas y Pasamanos</h2>
+            <p class="service-desc">
+              Fabricamos barandas y pasamanos en acero inoxidable 304 con vidrio templado o laminado. Diseño elegante que combina seguridad estructural con máxima transparencia visual. Cumplimiento con normativa NSR-10 en todos los proyectos.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-shield-alt"></i></div> Acero inoxidable 304</li>
+              <li><div class="service-feature"><i class="fas fa-check-double"></i></div> Normativa NSR-10</li>
+              <li><div class="service-feature"><i class="fas fa-stairs"></i></div> Escaleras y balcones</li>
+              <li><div class="service-feature"><i class="fas fa-eye"></i></div> Máxima transparencia visual</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20barandas%20en%20acero%20inoxidable" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Barandas
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Ventanas de Aluminio -->
+        <div class="service-row" data-category="aluminio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/Ventana-Aluminio-Vidrio-02.jpg" alt="Ventanas de Aluminio">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Carpintería de Aluminio</span>
+            <h2 class="service-title">Ventanas de Aluminio</h2>
+            <p class="service-desc">
+              Fabricamos ventanas en diversas series y sistemas de aluminio extruido de alta calidad. Desde ventanas corredizas para uso residencial hasta sistemas proyectantes y fijos para proyectos arquitectónicos de mayor escala.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-window-maximize"></i></div> Múltiples series disponibles</li>
+              <li><div class="service-feature"><i class="fas fa-thermometer-half"></i></div> Aislamiento térmico y acústico</li>
+              <li><div class="service-feature"><i class="fas fa-paint-roller"></i></div> Colores anodizados y lacados</li>
+              <li><div class="service-feature"><i class="fas fa-bolt"></i></div> Cierres herméticos de precisión</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20ventanas%20de%20aluminio" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Ventanas
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. Pérgolas -->
+        <div class="service-row reverse" data-category="aluminio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/pergolas.jpg" alt="Pérgolas en Aluminio y Vidrio">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Estructuras Exteriores</span>
+            <h2 class="service-title">Pérgolas</h2>
+            <p class="service-desc">
+              Estructuras en aluminio y vidrio para terrazas, zonas sociales y patios. Las pérgolas de VITRIALUM DE ORIENTE combinan funcionalidad con diseño, protegiendo de la lluvia y el sol sin perder la conexión visual con el exterior.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-sun"></i></div> Filtro UV certificado</li>
+              <li><div class="service-feature"><i class="fas fa-tint-slash"></i></div> Estanqueidad total</li>
+              <li><div class="service-feature"><i class="fas fa-hammer"></i></div> Estructura robusta en aluminio</li>
+              <li><div class="service-feature"><i class="fas fa-cloud-sun"></i></div> Confort térmico exterior</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20pérgola" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Pérgola
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. Vitrinas en Aluminio y Madera -->
+        <div class="service-row" data-category="aluminio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/cerramiento.jpg" alt="Vitrinas en Aluminio y Madera">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Sistemas Panorámicos</span>
+            <h2 class="service-title">Cerramientos de Cristal</h2>
+            <p class="service-desc">
+              Cortinas de Vidrio y Cerramientos Panorámicos. Transformamos sus espacios con sistemas de vidrio templado y perfiles de aluminio de alta resistencia. Soluciones elegantes sin marcos verticales para una vista ininterrumpida y máxima protección.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-store"></i></div> Uso comercial y retail</li>
+              <li><div class="service-feature"><i class="fas fa-gem"></i></div> Acabados premium</li>
+              <li><div class="service-feature"><i class="fas fa-lock"></i></div> Sistemas de cierre seguros</li>
+              <li><div class="service-feature"><i class="fas fa-ruler-combined"></i></div> Fabricación totalmente a medida</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vitrinas" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Vitrina
+            </a>
+          </div>
+        </div>
+
+        <!-- 8. Cocinas y Closets Integrales -->
+        <div class="service-row reverse" data-category="interiores" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/cocina.webp" alt="Cocinas y Closets Integrales">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Diseño de Interiores</span>
+            <h2 class="service-title">Cocinas y Closets Integrales</h2>
+            <p class="service-desc">
+              Diseñamos y fabricamos cocinas y closets integrales combinando aluminio, madera y vidrio. Cada proyecto es personalizado según el espacio disponible y el estilo del cliente, desde diseños minimalistas hasta propuestas más elaboradas.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-kitchen-set"></i></div> Cocinas modulares integrales</li>
+              <li><div class="service-feature"><i class="fas fa-tshirt"></i></div> Closets y vestidores a medida</li>
+              <li><div class="service-feature"><i class="fas fa-palette"></i></div> Múltiples acabados disponibles</li>
+              <li><div class="service-feature"><i class="fas fa-pencil-ruler"></i></div> Diseño personalizado</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20cocina%20o%20closet%20integral" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Diseñar mi Espacio
+            </a>
+          </div>
+        </div>
+
+        <!-- 9. Vidrio Templado -->
+        <div class="service-row" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/Templado.jpg" alt="Vidrio Templado">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Protección Estructural</span>
+            <h2 class="service-title">Vidrio Templado</h2>
+            <p class="service-desc">
+              Procesamos cristales mediante tratamiento térmico controlado que incrementa la resistencia mecánica y térmica hasta 5 veces superior al vidrio ordinario. Al romperse, se fragmenta en pequeños trozos redondeados que no generan heridas.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-fire"></i></div> Resistencia térmica certificada</li>
+              <li><div class="service-feature"><i class="fas fa-shield-alt"></i></div> 5× más resistente que vidrio crudo</li>
+              <li><div class="service-feature"><i class="fas fa-expand-arrows-alt"></i></div> Espesores de 4 a 19 mm</li>
+              <li><div class="service-feature"><i class="fas fa-check-circle"></i></div> Certificación de seguridad</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20templado" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Templado
+            </a>
+          </div>
+        </div>
+
+        <!-- 10. Vidrio Laminado -->
+        <div class="service-row reverse" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/laminado.jpg" alt="Vidrio Laminado de Seguridad">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Seguridad Reforzada</span>
+            <h2 class="service-title">Vidrio Laminado</h2>
+            <p class="service-desc">
+              Dos o más láminas de vidrio unidas por una película elástica de PVB que evita el desprendimiento de fragmentos en caso de rotura. Ofrece protección anti-intrusión, aislamiento acústico superior y protección UV.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-lock"></i></div> Protección anti-intrusión</li>
+              <li><div class="service-feature"><i class="fas fa-volume-down"></i></div> Aislamiento acústico 40 dB</li>
+              <li><div class="service-feature"><i class="fas fa-user-shield"></i></div> Seguridad ante rotura</li>
+              <li><div class="service-feature"><i class="fas fa-layer-group"></i></div> Película PVB multi-capa</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20información%20sobre%20vidrio%20laminado" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Más Información
+            </a>
+          </div>
+        </div>
+
+        <!-- 11. Vidrio Esmerilado / Escarchado -->
+        <div class="service-row" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/esmerilado.jpg" alt="Vidrio Esmerilado y Escarchado">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Privacidad y Diseño</span>
+            <h2 class="service-title">Vidrio Esmerilado y Escarchado</h2>
+            <p class="service-desc">
+              Tratamientos superficiales de sandblasting y escarchado para crear zonas de privacidad sin sacrificar el paso de la luz. Ideal para divisiones de oficina, baños, fachadas y aplicaciones decorativas en general.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-eye-slash"></i></div> Opacidad controlada</li>
+              <li><div class="service-feature"><i class="fas fa-sun"></i></div> Permite paso de luz natural</li>
+              <li><div class="service-feature"><i class="fas fa-pen-nib"></i></div> Diseños y logotipos personalizados</li>
+              <li><div class="service-feature"><i class="fas fa-palette"></i></div> Acabado mate elegante</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20esmerilado" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Personalizar
+            </a>
+          </div>
+        </div>
+
+        <!-- 12. Vidrio Grabado -->
+        <div class="service-row reverse" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/grabado.jpg" alt="Vidrio Grabado Decorativo">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Arte en Vidrio</span>
+            <h2 class="service-title">Vidrio Grabado</h2>
+            <p class="service-desc">
+              Grabado artístico en vidrio mediante técnicas de chorro de arena para crear texturas, motivos decorativos, logotipos corporativos y diseños únicos. Cada pieza es un trabajo artesanal con identidad propia.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-paint-brush"></i></div> Diseños únicos y exclusivos</li>
+              <li><div class="service-feature"><i class="fas fa-building"></i></div> Identidad corporativa</li>
+              <li><div class="service-feature"><i class="fas fa-home"></i></div> Aplicaciones residenciales</li>
+              <li><div class="service-feature"><i class="fas fa-star"></i></div> Acabado artesanal premium</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20grabado" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Diseñar Grabado
+            </a>
+          </div>
+        </div>
+
+        <!-- 13. Espejos Biselados -->
+        <div class="service-row" data-category="interiores" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/EspejoBiselado.webp" alt="Espejos Biselados">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Interiorismo Premium</span>
+            <h2 class="service-title">Espejos Biselados</h2>
+            <p class="service-desc">
+              Espejos con bordes biselados de alta precisión que aportan elegancia y profundidad a cualquier espacio. Disponibles en diferentes anchos de bisel y espesores. Amplían visualmente los ambientes y aportan luminosidad.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-border-all"></i></div> Biseles de 1 a 5 cm de ancho</li>
+              <li><div class="service-feature"><i class="fas fa-gem"></i></div> Vidrio extra-claro disponible</li>
+              <li><div class="service-feature"><i class="fas fa-ruler-combined"></i></div> Fabricación a medida</li>
+              <li><div class="service-feature"><i class="fas fa-magic"></i></div> Retroiluminación LED opcional</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20espejos%20biselados" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos
+            </a>
+          </div>
+        </div>
+
+        <!-- 14. Vidrio Plano hasta 19mm -->
+        <div class="service-row reverse" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/PlanoTemplado.webp" alt="Vidrio Plano hasta 19mm">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Suministro Especializado</span>
+            <h2 class="service-title">Vidrio Plano hasta 19 mm</h2>
+            <p class="service-desc">
+              Suministro y corte de vidrio plano en espesores desde 3 mm hasta 19 mm para todo tipo de aplicaciones estructurales, decorativas e industriales. Corte por computador con precisión milimétrica y pulido de cantos a diamante.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-ruler"></i></div> Espesores 3 – 19 mm</li>
+              <li><div class="service-feature"><i class="fas fa-microchip"></i></div> Corte computarizado CNC</li>
+              <li><div class="service-feature"><i class="fas fa-gem"></i></div> Pulido de cantos a diamante</li>
+              <li><div class="service-feature"><i class="fas fa-truck"></i></div> Entrega en toda la región</li>
+            </ul>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20plano" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Medidas
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /container -->
     </section>
 
-    <main class="container">
-        <section class="services-section">
-            
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/1.jpeg" alt="Vidrio Templado"></div>
-                <div class="service-info">
-                    <span class="tag">Protección Estructural</span>
-                    <h2>Vidrio Templado Certificado</h2>
-                    <p>Procesamos cristales mediante tratamiento térmico que aumenta la resistencia mecánica y térmica hasta 5 veces más que un vidrio ordinario.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-shield-alt"></i> Alta resistencia</li>
-                        <li><i class="fas fa-check-double"></i> Herrajes en Acero</li>
-                        <li><i class="fas fa-expand-arrows-alt"></i> Divisiones de baño</li>
-                        <li><i class="fas fa-door-open"></i> Puertas batientes</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Cotizar Templado</a>
-                </div>
+    <!-- TECHNICAL SPECS -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="tech-specs-section" data-aos="fade-up">
+          <div class="tech-specs-header">
+            <div>
+              <span class="section-label" style="color:rgba(255,255,255,0.5);">Capacidades Técnicas</span>
+              <h2 class="section-title white">Lo que Nos Diferencia</h2>
             </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/2.jpg" alt="Espejos Decorativos"></div>
-                <div class="service-info">
-                    <span class="tag">Interiorismo Premium</span>
-                    <h2>Espejos y Revestimientos</h2>
-                    <p>Diseñamos elementos reflectantes que amplían visualmente sus espacios con acabados de alta pureza.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-magic"></i> Iluminación LED</li>
-                        <li><i class="fas fa-border-all"></i> Espejos biselados</li>
-                        <li><i class="fas fa-layer-group"></i> Revestimiento muro</li>
-                        <li><i class="fas fa-gem"></i> Cristal Extra-claro</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Ver Acabados</a>
-                </div>
+            <p>Infraestructura técnica y procesos certificados para garantizar la mejor calidad en cada entrega.</p>
+          </div>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <div class="tech-card-icon"><i class="fas fa-microchip"></i></div>
+              <h4>Corte CNC Computarizado</h4>
+              <p>Ajuste milimétrico automatizado para fachadas, divisiones y estructuras de cualquier dimensión.</p>
             </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/3.jpg" alt="Fachadas Comerciales"></div>
-                <div class="service-info">
-                    <span class="tag">Arquitectura Comercial</span>
-                    <h2>Fachadas y Vitrinas</h2>
-                    <p>Sistemas de acristalamiento para locales comerciales y edificios que requieren máxima visibilidad.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-city"></i> Sistemas Spider</li>
-                        <li><i class="fas fa-volume-mute"></i> Termoacústico</li>
-                        <li><i class="fas fa-store"></i> Vitrinas seguridad</li>
-                        <li><i class="fas fa-wind"></i> Resistencia vientos</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Proyecto Comercial</a>
-                </div>
+            <div class="tech-card">
+              <div class="tech-card-icon"><i class="fas fa-fire-flame-curved"></i></div>
+              <h4>Temple Certificado</h4>
+              <p>Proceso térmico controlado que multiplica por 5 la resistencia del vidrio. Fragmentación segura.</p>
             </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/1.jpeg" alt="Barandas en Vidrio"></div>
-                <div class="service-info">
-                    <span class="tag">Seguridad y Estilo</span>
-                    <h2>Barandas y Pasamanos</h2>
-                    <p>Sistemas de seguridad elegantes para escaleras y balcones utilizando acero inoxidable y cristal templado.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-shield-alt"></i> Vidrio Laminado</li>
-                        <li><i class="fas fa-align-left"></i> Acero Inoxidable</li>
-                        <li><i class="fas fa-check"></i> Normatividad NSR-10</li>
-                        <li><i class="fas fa-eye"></i> Máxima Transparencia</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Solicitar Medida</a>
-                </div>
+            <div class="tech-card">
+              <div class="tech-card-icon"><i class="fas fa-gem"></i></div>
+              <h4>Pulido a Diamante</h4>
+              <p>Cantos perfectamente pulidos, seguros al tacto. Estética sin compromisos en cada pieza.</p>
             </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/2.jpg" alt="Domos y Cubiertas"></div>
-                <div class="service-info">
-                    <span class="tag">Iluminación Natural</span>
-                    <h2>Domos y Cubiertas</h2>
-                    <p>Soluciones de techado en vidrio para maximizar la entrada de luz natural protegiendo de la intemperie.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-sun"></i> Filtro UV</li>
-                        <li><i class="fas fa-tint-slash"></i> Estanqueidad Total</li>
-                        <li><i class="fas fa-hammer"></i> Estructura Robusta</li>
-                        <li><i class="fas fa-cloud-sun"></i> Confort Térmico</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Cotizar Cubierta</a>
-                </div>
+            <div class="tech-card">
+              <div class="tech-card-icon"><i class="fas fa-truck-moving"></i></div>
+              <h4>Logística Especializada</h4>
+              <p>Vehículos acondicionados para transporte vertical de piezas de gran formato sin riesgos.</p>
             </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/3.jpg" alt="Vidrio Laminado"></div>
-                <div class="service-info">
-                    <span class="tag">Seguridad Reforzada</span>
-                    <h2>Vidrio Laminado de Seguridad</h2>
-                    <p>Dos o más láminas de vidrio unidas por una película elástica que evita el desprendimiento en caso de rotura.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-lock"></i> Anti-intrusión</li>
-                        <li><i class="fas fa-volume-down"></i> Aislamiento Acústico</li>
-                        <li><i class="fas fa-user-shield"></i> Protección Personas</li>
-                        <li><i class="fas fa-layer-group"></i> Multi-capas</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Más Información</a>
-                </div>
+            <div class="tech-card">
+              <div class="tech-card-icon"><i class="fas fa-shield-alt"></i></div>
+              <h4>Normativa NSR-10</h4>
+              <p>Todos nuestros proyectos cumplen con las normas de sismo-resistencia colombianas vigentes.</p>
             </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/1.jpeg" alt="Oficinas Modernas"></div>
-                <div class="service-info">
-                    <span class="tag">Espacios Corporativos</span>
-                    <h2>Divisiones de Oficina</h2>
-                    <p>Creamos entornos de trabajo modernos y luminosos con divisiones acústicas y estéticas.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-briefcase"></i> Estilo Ejecutivo</li>
-                        <li><i class="fas fa-microphone-slash"></i> Privacidad Sonora</li>
-                        <li><i class="fas fa-columns"></i> Perfilería Esbelta</li>
-                        <li><i class="fas fa-lightbulb"></i> Aprovechamiento Luz</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Planificar Oficina</a>
-                </div>
+            <div class="tech-card">
+              <div class="tech-card-icon"><i class="fas fa-headset"></i></div>
+              <h4>Soporte Posventa</h4>
+              <p>Acompañamiento y garantía tras la instalación. Ajuste de herrajes y asistencia técnica.</p>
             </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/2.jpg" alt="Vidrio Sandblasting"></div>
-                <div class="service-info">
-                    <span class="tag">Diseño Personalizado</span>
-                    <h2>Cristales Decorativos (Sandblasting)</h2>
-                    <p>Tratamientos superficiales para crear diseños, logotipos o zonas de privacidad en el cristal.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-pen-nib"></i> Diseños Únicos</li>
-                        <li><i class="fas fa-eye-slash"></i> Opacidad Controlada</li>
-                        <li><i class="fas fa-palette"></i> Acabado Mate</li>
-                        <li><i class="fas fa-building"></i> Identidad Corporativa</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Personalizar</a>
-                </div>
-            </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/3.jpg" alt="Mantenimiento"></div>
-                <div class="service-info">
-                    <span class="tag">Cuidado Especializado</span>
-                    <h2>Mantenimiento y Reparación</h2>
-                    <p>Servicio técnico profesional para ajuste de herrajes, cambio de cristales y sellado de filtraciones.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-sync"></i> Ajuste de Puertas</li>
-                        <li><i class="fas fa-oil-can"></i> Lubricación Herrajes</li>
-                        <li><i class="fas fa-faucet"></i> Cambio de Empaques</li>
-                        <li><i class="fas fa-check-circle"></i> Garantía de Servicio</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Agendar Visita</a>
-                </div>
-            </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/1.jpeg" alt="Ventanas Aluminio"></div>
-                <div class="service-info">
-                    <span class="tag">Carpintería de Aluminio</span>
-                    <h2>Ventanería de Alta Gama</h2>
-                    <p>Fabricación de ventanas en aluminio de diferentes series para un aislamiento térmico y acústico superior.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-window-maximize"></i> Variedad de Series</li>
-                        <li><i class="fas fa-bolt"></i> Cierres Herméticos</li>
-                        <li><i class="fas fa-paint-roller"></i> Colores Diversos</li>
-                        <li><i class="fas fa-thermometer-half"></i> Ahorro Energético</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Cotizar Ventanas</a>
-                </div>
-            </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/2.jpg" alt="Espejos Inteligentes"></div>
-                <div class="service-info">
-                    <span class="tag">Tecnología Aplicada</span>
-                    <h2>Espejos Inteligentes (Smart)</h2>
-                    <p>Integración de tecnología LED touch y sistemas antivaho para baños y vestidores modernos.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-fingerprint"></i> Sensor Touch</li>
-                        <li><i class="fas fa-smog"></i> Sistema Antivaho</li>
-                        <li><i class="fas fa-palette"></i> Luz Graduable</li>
-                        <li><i class="fas fa-mobile-alt"></i> Diseño Futurista</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Ver Modelos</a>
-                </div>
-            </div>
-
-            <div class="service-row" data-aos="fade-up">
-                <div class="service-image"><img src="IMG/3.jpg" alt="Asesoría Técnica"></div>
-                <div class="service-info">
-                    <span class="tag">Consultoría Profesional</span>
-                    <h2>Asesoría en Proyectos</h2>
-                    <p>Acompañamiento técnico desde el diseño inicial hasta la ejecución final de su obra blanca.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-pencil-ruler"></i> Planos Técnicos</li>
-                        <li><i class="fas fa-calculator"></i> Presupuestos</li>
-                        <li><i class="fas fa-users"></i> Visita en Obra</li>
-                        <li><i class="fas fa-file-contract"></i> Cumplimiento Legal</li>
-                    </ul>
-                    <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium"><i class="fab fa-whatsapp"></i> Hablar con Experto</a>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="tech-specs" data-aos="fade-up">
-            <div class="container">
-                <div class="tech-grid">
-                    <div class="tech-item"><i class="fas fa-tools"></i><h4>Instalación Técnica</h4><p style="font-size: 0.85rem; color: #666;">Bajo normas de seguridad industrial.</p></div>
-                    <div class="tech-item"><i class="fas fa-ruler-combined"></i><h4>Medición</h4><p style="font-size: 0.85rem; color: #666;">Precisión milimétrica en cada toma.</p></div>
-                    <div class="tech-item"><i class="fas fa-truck"></i><h4>Entrega Segura</h4><p style="font-size: 0.85rem; color: #666;">Logística especializada en cristalería.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-footer-box" data-aos="zoom-in">
-            <h2 style="font-size: 2.8rem; margin-bottom: 20px; font-weight: 800;">¿Hablamos de tu próximo proyecto?</h2>
-            <p style="opacity: 0.8; margin-bottom: 40px; font-size: 1.2rem;">Asesoría técnica sin costo en todo el Oriente Antioqueño.</p>
-            <a href="https://wa.me/573008837223" target="_blank" class="btn-wa-premium" style="min-width: 320px;"><i class="fa-brands fa-whatsapp"></i><span>Hablar con un Especialista</span></a>
-        </section>
-    </main>
-
-    <footer style="padding: 60px 0; text-align: center; color: #888; font-size: 0.85rem; border-top: 1px solid #eee;">
-        <div class="container">
-            <p style="font-weight: 700; color: var(--secondary); margin-bottom: 10px;">EL PUNTO DE LOS CRISTALES</p>
-            <p>Calle 26 #32-33, El Carmen de Viboral, Antioquia</p>
-            <p style="margin-top: 20px; opacity: 0.6;">© 2026 Ingeniería y Diseño en Vidrio. Todos los derechos reservados.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // LOADER DURACIÓN: 1 SEGUNDO
-        window.addEventListener("load", function() {
-            setTimeout(function() {
-                const loader = document.getElementById("loader-overlay");
-                loader.classList.add("loader-hidden");
-            }, 1000); 
-        });
+    <!-- WINDOW SYSTEMS -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="window-systems" data-aos="fade-up">
+          <div class="window-systems-header">
+            <span class="section-label">Referencia Técnica</span>
+            <h2 class="section-title">Sistemas de Ventanería</h2>
+            <p style="color:var(--text-muted);margin-top:12px;max-width:600px;font-size:0.92rem;">
+              Trabajamos con los sistemas de aluminio más reconocidos del mercado colombiano, garantizando compatibilidad, disponibilidad de repuestos y estándares de calidad comprobados.
+            </p>
+          </div>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="system-num">5020</div>
+              <div class="system-name">Sistema Corredizo</div>
+              <p class="system-desc">Ventanas corredizas estándar para uso residencial. Relación calidad-precio óptima.</p>
+            </div>
+            <div class="system-card">
+              <div class="system-num">744</div>
+              <div class="system-name">Sistema Corredizo</div>
+              <p class="system-desc">Mayor hermeticidad y aislamiento. Ideal para zonas con alta exposición climática.</p>
+            </div>
+            <div class="system-card">
+              <div class="system-num">8025</div>
+              <div class="system-name">Sistema Corredizo</div>
+              <p class="system-desc">Perfil robusto para vanos de gran dimensión. Uso residencial y semi-comercial.</p>
+            </div>
+            <div class="system-card">
+              <div class="system-num">7038</div>
+              <div class="system-name">Monumental</div>
+              <p class="system-desc">Sistema de alta gama para proyectos arquitectónicos de envergadura y diseño premium.</p>
+            </div>
+            <div class="system-card">
+              <div class="system-num">3831</div>
+              <div class="system-name">Fijo y Proyectante</div>
+              <p class="system-desc">Módulos fijos y proyectantes. Versatilidad total para diseños mixtos y ventilación controlada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        AOS.init({ duration: 1000, once: true, easing: 'ease-out-quad' });
+    <!-- CTA -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="servicios-cta" data-aos="zoom-in">
+          <h2>¿Hablamos de tu Próximo Proyecto?</h2>
+          <p>Asesoría técnica sin costo en todo el Oriente Antioqueño. Un especialista te atiende de inmediato.</p>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="Contacto.html" class="btn btn-outline-white btn-lg">
+              <i class="fas fa-envelope"></i> Enviar Consulta
+            </a>
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20asesoría%20técnica%20sobre%20un%20proyecto" target="_blank" class="btn btn-wa btn-lg">
+              <i class="fa-brands fa-whatsapp"></i> Hablar con un Especialista
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
-    </script>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-main">Vitrialum de Oriente</div>
+          <div class="brand-sub">Vidrio &amp; Aluminio Profesional</div>
+          <p>Soluciones arquitectónicas de precisión en vidrio, aluminio y acero inoxidable para el Oriente Antioqueño y toda la región.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="Servicios.html">Cabinas de Baño</a></li>
+            <li><a href="Servicios.html">Fachadas Flotantes</a></li>
+            <li><a href="Servicios.html">Barandas en Acero</a></li>
+            <li><a href="Servicios.html">Ventanas de Aluminio</a></li>
+            <li><a href="Servicios.html">Pérgolas y Cubiertas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 312 201 7791</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>elkinantoni@hotmail.com</span></div>
+          <div class="footer-contact-item"><i class="fas fa-location-dot"></i><span>Crra 30 #23-12, El Carmen de Viboral, Antioquia</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 7:30am–5:00pm · Sáb 7:30am–1:00pm</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 <strong>VITRIALUM DE ORIENTE</strong>. Todos los derechos reservados.</span>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/p/el-punto-de-los-cristales-61576682337365/" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/573122017791" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="JS/shared.js"></script>
+  <script src="JS/servicios.js"></script>
 </body>
 </html>
