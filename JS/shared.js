@@ -15,17 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!loader) return;
 
+setTimeout(() => {
+  loader.classList.add('loader-hidden');
+
   setTimeout(() => {
+    loader.remove();
+  }, 700);
 
-    loader.classList.add('loader-hidden');
-
-    setTimeout(() => {
-
-      loader.remove();
-
-    }, 700);
-
-  }, 500);
+}, 1200);
 
 });
 
