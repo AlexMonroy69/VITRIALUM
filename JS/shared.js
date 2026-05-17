@@ -143,3 +143,83 @@ setTimeout(() => {
     });
 
 })();
+
+/* =========================
+   WHATSAPP OPTIONS
+========================= */
+
+(function () {
+
+  const whatsappToggle = document.getElementById("whatsapp-toggle");
+  const whatsappOptions = document.getElementById("whatsapp-options");
+
+  if (!whatsappToggle || !whatsappOptions) return;
+
+  // Abrir/cerrar el menú al hacer click en el botón
+  whatsappToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = whatsappOptions.classList.toggle("active");
+    whatsappToggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Cerrar el menú cuando se hace click fuera
+  document.addEventListener("click", (e) => {
+    const clickedOutside = 
+      !whatsappToggle.contains(e.target) &&
+      !whatsappOptions.contains(e.target);
+
+    if (clickedOutside) {
+      whatsappOptions.classList.remove("active");
+      whatsappToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Cerrar el menú al hacer click en una opción
+  whatsappOptions.querySelectorAll(".whatsapp-option").forEach(option => {
+    option.addEventListener("click", () => {
+      whatsappOptions.classList.remove("active");
+      whatsappToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+})();
+
+/* =========================
+   MOBILE WHATSAPP OPTIONS
+========================= */
+
+(function () {
+
+  const mobileWaToggle = document.getElementById("mobile-wa-toggle");
+  const mobileWaOptions = document.getElementById("mobile-wa-options");
+
+  if (!mobileWaToggle || !mobileWaOptions) return;
+
+  // Abrir/cerrar el menú al hacer click en el botón
+  mobileWaToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = mobileWaOptions.classList.toggle("active");
+    mobileWaToggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Cerrar el menú cuando se hace click fuera
+  document.addEventListener("click", (e) => {
+    const clickedOutside = 
+      !mobileWaToggle.contains(e.target) &&
+      !mobileWaOptions.contains(e.target);
+
+    if (clickedOutside) {
+      mobileWaOptions.classList.remove("active");
+      mobileWaToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Cerrar el menú al hacer click en una opción
+  mobileWaOptions.querySelectorAll(".mobile-wa-option").forEach(option => {
+    option.addEventListener("click", () => {
+      mobileWaOptions.classList.remove("active");
+      mobileWaToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+})();

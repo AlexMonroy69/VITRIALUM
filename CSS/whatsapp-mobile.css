@@ -1,0 +1,156 @@
+ /* ---- COVERAGE MAP SECTION ---- */
+    .coverage-map-section {
+      background: var(--dark);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+    }
+    .coverage-map-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(41,121,255,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(13,63,166,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .coverage-map-inner {
+      position: relative;
+      z-index: 1;
+      padding: 72px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .coverage-left-text .section-label { color: rgba(255,255,255,0.4); }
+    .coverage-left-text .section-title { color: var(--white); margin-bottom: 18px; }
+    .coverage-left-text > p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.93rem;
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+    .coverage-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .coverage-stat {
+      padding: 22px 18px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .coverage-stat:last-child { border-right: none; }
+    .coverage-stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .coverage-stat-label {
+      font-size: 0.68rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .coverage-pills-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 14px;
+    }
+    .coverage-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .coverage-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+    .coverage-pill:hover {
+      background: var(--electric);
+      border-color: var(--electric);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .coverage-pill i {
+      font-size: 0.5rem;
+      color: var(--electric);
+      transition: color 0.25s;
+    }
+    .coverage-pill:hover i { color: white; }
+    /* Right: feature cards */
+    .coverage-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .coverage-feature-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: all 0.3s ease;
+    }
+    .coverage-feature-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(41,121,255,0.35);
+      transform: translateX(6px);
+    }
+    .coverage-feature-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(41,121,255,0.15);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--electric);
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+    .coverage-feature-body h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+    .coverage-feature-body p {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 1024px) {
+      .coverage-map-inner { grid-template-columns: 1fr; padding: 52px 36px; gap: 40px; }
+    }
+    @media (max-width: 640px) {
+      .coverage-map-inner { padding: 40px 24px; }
+      .coverage-stats-row { grid-template-columns: 1fr; }
+      .coverage-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .coverage-stat:last-child { border-bottom: none; }
+    }

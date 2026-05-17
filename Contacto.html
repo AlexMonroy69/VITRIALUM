@@ -13,6 +13,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/whatsapp-mobile.css">
   <link rel="stylesheet" href="CSS/contacto.css">
 </head>
 <body>
@@ -25,10 +26,19 @@
     </div>
   </div>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/573122017791" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+    <div class="whatsapp-container">
+      <button class="whatsapp-float" id="whatsapp-toggle" aria-label="WhatsApp" aria-expanded="false">
+        <i class="fa-brands fa-whatsapp"></i>
+      </button>
+      <div class="whatsapp-options" id="whatsapp-options">
+        <a href="https://wa.me/573122017791" class="whatsapp-option" target="_blank">
+          <i class="fas fa-user"></i> Elkin
+        </a>
+        <a href="https://wa.me/573148110468" class="whatsapp-option" target="_blank">
+          <i class="fas fa-user"></i> Gonzalo
+        </a>
+      </div>
+    </div>
 
   <!-- HEADER -->
   <header class="header" id="navbar">
@@ -64,9 +74,19 @@
       <li><a href="Galeria.html"   class="mobile-nav-link"><i class="fas fa-images"></i> Galería</a></li>
       <li><a href="Contacto.html"  class="mobile-nav-link active"><i class="fas fa-envelope"></i> Contacto</a></li>
     </ul>
-    <a href="https://wa.me/573122017791" class="mobile-wa-btn" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
-    </a>
+    <div class="mobile-wa-menu">
+      <button class="mobile-wa-btn" id="mobile-wa-toggle" aria-label="Contactar por WhatsApp" aria-expanded="false">
+        <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+      </button>
+      <div class="mobile-wa-options" id="mobile-wa-options">
+        <a href="https://wa.me/573122017791" class="mobile-wa-option" target="_blank">
+          <i class="fas fa-user"></i> Elkin
+        </a>
+        <a href="https://wa.me/573148110468" class="mobile-wa-option" target="_blank">
+          <i class="fas fa-user"></i> Gonzalo
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- HERO SM -->
@@ -95,6 +115,7 @@
                 <div class="info-content">
                   <h4>WhatsApp / Teléfono</h4>
                   <p>(+57) 312 201 7791</p>
+                  <p>(+57) 314 811 0468</p>
                 </div>
               </div>
 
@@ -119,7 +140,7 @@
                 <div class="info-icon"><i class="fas fa-clock"></i></div>
                 <div class="info-content">
                   <h4>Horario de Atención</h4>
-                  <p>Lun – Vie: 7:30 AM – 5:00 PM<br/></p>
+                  <p>Lun – Vie: 7:00 AM – 5:30 PM<br/></p>
                 </div>
               </div>
 
@@ -138,6 +159,7 @@
                  target="_blank" class="social-btn fb" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
               </a>
+          <a href="https://https://www.facebook.com/Emilianoatehortu" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
               <a href="https://wa.me/573122017791"
                  target="_blank" class="social-btn wa" aria-label="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
@@ -296,23 +318,25 @@
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
-          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) Crra 30 #23-12</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 312 201 7791</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 314 811 0468</span></div>
           <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>elkinantoni@hotmail.com</span></div>
           <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>vitrialum.j.a@hotmail.com</span></div>
           <div class="footer-contact-item"><i class="fas fa-location-dot"></i><span>Crra 30 #23-12, El Carmen de Viboral, Antioquia</span></div>
-          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 8:00am – 5:30pm</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 7:00am – 5:30pm</span></div>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 <strong>VITRIALUM DE ORIENTE</strong>. Todos los derechos reservados.</span>
         <div class="footer-socials">
           <a href="https://www.facebook.com/elkin.osorio.961" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://https://www.facebook.com/Emilianoatehortu" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://wa.me/573122017791" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/573148110468" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
   </footer>
-
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="JS/shared.js"></script>
   <script src="JS/contacto.js"></script>

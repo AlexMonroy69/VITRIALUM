@@ -6,20 +6,174 @@
   <meta name="description" content="VITRIALUM DE ORIENTE — Soluciones en vidrio, aluminio, cabinas de baño, fachadas flotantes, barandas en acero inoxidable, pérgolas y más en el Oriente Antioqueño.">
   <title>VITRIALUM DE ORIENTE | Soluciones en Vidrio y Aluminio</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- CSS -->
+  <link rel="icon" type="image/png" href="IMG/Logo.png">
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/whatsapp-mobile.css">
   <link rel="stylesheet" href="CSS/index.css">
+
+  <style>
+    /* ---- COVERAGE MAP SECTION ---- */
+    .coverage-map-section {
+      background: var(--dark);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+    }
+    .coverage-map-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(41,121,255,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(13,63,166,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .coverage-map-inner {
+      position: relative;
+      z-index: 1;
+      padding: 72px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .coverage-left-text .section-label { color: rgba(255,255,255,0.4); }
+    .coverage-left-text .section-title { color: var(--white); margin-bottom: 18px; }
+    .coverage-left-text > p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.93rem;
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+    .coverage-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .coverage-stat {
+      padding: 22px 18px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .coverage-stat:last-child { border-right: none; }
+    .coverage-stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .coverage-stat-label {
+      font-size: 0.68rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .coverage-pills-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 14px;
+    }
+    .coverage-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .coverage-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+    .coverage-pill:hover {
+      background: var(--electric);
+      border-color: var(--electric);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .coverage-pill i {
+      font-size: 0.5rem;
+      color: var(--electric);
+      transition: color 0.25s;
+    }
+    .coverage-pill:hover i { color: white; }
+    /* Right: feature cards */
+    .coverage-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .coverage-feature-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: all 0.3s ease;
+    }
+    .coverage-feature-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(41,121,255,0.35);
+      transform: translateX(6px);
+    }
+    .coverage-feature-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(41,121,255,0.15);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--electric);
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+    .coverage-feature-body h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+    .coverage-feature-body p {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 1024px) {
+      .coverage-map-inner { grid-template-columns: 1fr; padding: 52px 36px; gap: 40px; }
+    }
+    @media (max-width: 640px) {
+      .coverage-map-inner { padding: 40px 24px; }
+      .coverage-stats-row { grid-template-columns: 1fr; }
+      .coverage-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .coverage-stat:last-child { border-bottom: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,10 +185,22 @@
     </div>
   </div>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/573122017791" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  <!-- WHATSAPP FLOAT --> 
+  <div class="whatsapp-container"> 
+    <!-- BOTÓN PRINCIPAL --> 
+    <button class="whatsapp-float" id="whatsapp-toggle"> 
+      <i class="fa-brands fa-whatsapp"></i> 
+    </button> 
+    <!-- OPCIONES --> 
+    <div class="whatsapp-options" id="whatsapp-options"> 
+      <a href="https://wa.me/573122017791" target="_blank" class="whatsapp-option"> 
+        <i class="fas fa-user"></i> <span>Elkin</span> 
+      </a> 
+      <a href="https://wa.me/573148110468" target="_blank" class="whatsapp-option"> 
+        <i class="fas fa-user"></i> <span>Gonzalo</span> 
+      </a> 
+    </div> 
+  </div>
 
   <!-- HEADER -->
   <header class="header" id="navbar">
@@ -46,17 +212,15 @@
           <span class="brand-sub">Vidrio &amp; Aluminio Profesional</span>
         </div>
       </a>
-
       <nav aria-label="Navegación principal">
         <ul class="nav-list">
-          <li><a href="index.html"    class="nav-link active">Inicio</a></li>
+          <li><a href="index.html"     class="nav-link active">Inicio</a></li>
           <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
           <li><a href="Nosotros.html"  class="nav-link">Nosotros</a></li>
           <li><a href="Galeria.html"   class="nav-link">Galería</a></li>
           <li><a href="Contacto.html"  class="nav-link">Contacto</a></li>
         </ul>
       </nav>
-
       <button class="nav-toggle" id="nav-toggle" aria-label="Menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -66,15 +230,25 @@
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
     <ul class="mobile-nav-list">
-      <li><a href="index.html"    class="mobile-nav-link active"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="index.html"     class="mobile-nav-link active"><i class="fas fa-home"></i> Inicio</a></li>
       <li><a href="Servicios.html" class="mobile-nav-link"><i class="fas fa-layer-group"></i> Servicios</a></li>
       <li><a href="Nosotros.html"  class="mobile-nav-link"><i class="fas fa-users"></i> Nosotros</a></li>
       <li><a href="Galeria.html"   class="mobile-nav-link"><i class="fas fa-images"></i> Galería</a></li>
       <li><a href="Contacto.html"  class="mobile-nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>
     </ul>
-    <a href="https://wa.me/573122017791" class="mobile-wa-btn" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
-    </a>
+    <div class="mobile-wa-menu">
+      <button class="mobile-wa-btn" id="mobile-wa-toggle" aria-label="Contactar por WhatsApp" aria-expanded="false">
+        <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+      </button>
+      <div class="mobile-wa-options" id="mobile-wa-options">
+        <a href="https://wa.me/573122017791" class="mobile-wa-option" target="_blank">
+          <i class="fas fa-user"></i> Elkin
+        </a>
+        <a href="https://wa.me/573148110468" class="mobile-wa-option" target="_blank">
+          <i class="fas fa-user"></i> Gonzalo
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- HERO -->
@@ -85,37 +259,34 @@
       <div class="hero-slide" style="background-image: url('IMG/carrousel-3.jpeg')"></div>
     </div>
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
       <div class="hero-eyebrow">
         <i class="fas fa-gem"></i>
         Oriente Antioqueño — Desde El Carmen de Viboral
       </div>
-
       <div class="hero-title-wrap">
         <h1 class="hero-title active">Ingeniería en Vidrio</h1>
         <h1 class="hero-title">Lujo &amp; Transparencia</h1>
         <h1 class="hero-title">Protección Total</h1>
       </div>
-
       <p class="hero-sub">Soluciones arquitectónicas de precisión en vidrio, aluminio y acero inoxidable.</p>
-
       <div class="hero-btn-group">
         <a href="Servicios.html" class="btn btn-outline-white btn-lg">
           <i class="fas fa-layer-group"></i> Ver Servicios
         </a>
         <a href="https://wa.me/573122017791" target="_blank" class="btn btn-wa btn-lg">
-          <i class="fa-brands fa-whatsapp"></i> Iniciar Cotización
+          <i class="fa-brands fa-whatsapp"></i> Iniciar Cotización Con Elkin
+        </a>
+                <a href="https://wa.me/573148110468" target="_blank" class="btn btn-wa btn-lg">
+          <i class="fa-brands fa-whatsapp"></i> Iniciar Cotización Con Gonzalo
         </a>
       </div>
     </div>
-
     <div class="hero-dots">
       <div class="hero-dot active"></div>
       <div class="hero-dot"></div>
       <div class="hero-dot"></div>
     </div>
-
     <div class="hero-scroll">
       <div class="hero-scroll-line"></div>
       <span>Scroll</span>
@@ -197,7 +368,7 @@
   <!-- SERVICES PREVIEW -->
   <section class="section-padding bg-off-white">
     <div class="container">
-      <div style="text-align:center;margin-bottom:0;" data-aos="fade-up">
+      <div style="text-align:center;" data-aos="fade-up">
         <span class="section-label">Lo que Hacemos</span>
         <h2 class="section-title">Nuestros Servicios</h2>
         <p style="color:var(--text-muted);margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto;font-size:0.92rem;">
@@ -248,41 +419,80 @@
     </div>
   </section>
 
-  <!-- COVERAGE -->
+  <!-- COVERAGE — diseño premium oscuro -->
   <section class="section-padding">
-    <div class="container coverage-wrap">
-      <div data-aos="fade-up">
-        <span class="section-label">Cobertura Regional</span>
-        <h2 class="section-title">Presencia en el Oriente Antioqueño</h2>
-        <p style="color:var(--text-muted);margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto;font-size:0.92rem;">
-          Ubicados en El Carmen de Viboral, atendemos con rapidez y seguridad a toda la región.
-        </p>
-      </div>
-      <div class="coverage-badges" data-aos="fade-up">
-        <span class="coverage-badge">El Carmen de Viboral</span>
-        <span class="coverage-badge">Rionegro</span>
-        <span class="coverage-badge">La Ceja</span>
-        <span class="coverage-badge">Guarne</span>
-        <span class="coverage-badge">Marinilla</span>
-        <span class="coverage-badge">El Retiro</span>
-        <span class="coverage-badge">Santuario</span>
-        <span class="coverage-badge">La Unión</span>
-      </div>
-      <div class="coverage-cards">
-        <div class="coverage-card" data-aos="fade-up" data-aos-delay="0">
-          <i class="fas fa-truck-moving"></i>
-          <h4>Logística Segura</h4>
-          <p>Vehículos acondicionados para transporte vertical de cristales de gran formato sin riesgos.</p>
-        </div>
-        <div class="coverage-card" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-clock"></i>
-          <h4>Tiempos Récord</h4>
-          <p>Fabricación y entrega de vidrio templado optimizados para no retrasar su obra.</p>
-        </div>
-        <div class="coverage-card" data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-headset"></i>
-          <h4>Asesoría Técnica</h4>
-          <p>Visitas de medición y consultoría sin costo en toda la zona urbana del Oriente Antioqueño.</p>
+    <div class="container">
+      <div class="coverage-map-section" data-aos="fade-up">
+        <div class="coverage-map-inner">
+
+          <!-- LEFT -->
+          <div class="coverage-left">
+            <div class="coverage-left-text">
+              <span class="section-label">Cobertura Regional</span>
+              <h2 class="section-title">Presencia en el Oriente Antioqueño</h2>
+              <p>Nuestra base de operaciones está en El Carmen de Viboral, pero nuestra logística especializada nos permite llegar con rapidez, precisión y seguridad a toda la región.</p>
+            </div>
+
+            <div class="coverage-stats-row">
+              <div class="coverage-stat">
+                <div class="coverage-stat-num">8</div>
+                <div class="coverage-stat-label">Municipios</div>
+              </div>
+              <div class="coverage-stat">
+                <div class="coverage-stat-num">10+</div>
+                <div class="coverage-stat-label">Años activos</div>
+              </div>
+              <div class="coverage-stat">
+                <div class="coverage-stat-num">500+</div>
+                <div class="coverage-stat-label">Proyectos</div>
+              </div>
+            </div>
+
+            <p class="coverage-pills-label">Municipios que atendemos</p>
+            <div class="coverage-pills">
+              <span class="coverage-pill"><i class="fas fa-circle"></i> El Carmen de Viboral</span>
+              <span class="coverage-pill"><i class="fas fa-circle"></i> Rionegro</span>
+              <span class="coverage-pill"><i class="fas fa-circle"></i> La Ceja</span>
+              <span class="coverage-pill"><i class="fas fa-circle"></i> Guarne</span>
+              <span class="coverage-pill"><i class="fas fa-circle"></i> Marinilla</span>
+              <span class="coverage-pill"><i class="fas fa-circle"></i> El Retiro</span>
+              <span class="coverage-pill"><i class="fas fa-circle"></i> Santuario</span>
+              <span class="coverage-pill"><i class="fas fa-circle"></i> La Unión</span>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="coverage-right">
+            <div class="coverage-feature-card">
+              <div class="coverage-feature-icon"><i class="fas fa-truck-moving"></i></div>
+              <div class="coverage-feature-body">
+                <h4>Logística Especializada</h4>
+                <p>Vehículos acondicionados para el transporte vertical de cristales de gran formato. Entrega sin riesgos directamente en obra.</p>
+              </div>
+            </div>
+            <div class="coverage-feature-card">
+              <div class="coverage-feature-icon"><i class="fas fa-clock"></i></div>
+              <div class="coverage-feature-body">
+                <h4>Tiempos Récord</h4>
+                <p>Fabricación y entrega de vidrio templado optimizados para no retrasar su obra o remodelación. Cumplimos los plazos acordados.</p>
+              </div>
+            </div>
+            <div class="coverage-feature-card">
+              <div class="coverage-feature-icon"><i class="fas fa-headset"></i></div>
+              <div class="coverage-feature-body">
+                <h4>Asesoría Técnica Sin Costo</h4>
+                <p>Visitas de medición y consultoría en todos los municipios del Oriente Antioqueño, sin ningún compromiso de contratación.</p>
+              </div>
+            </div>
+            <div class="coverage-feature-card">
+              <div class="coverage-feature-icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="coverage-feature-body">
+                <h4>Garantía en Cada Proyecto</h4>
+                <p>Herrajes en acero inoxidable 304 con garantía de por vida. Respaldo técnico posventa en cualquier punto de cobertura.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -338,7 +548,7 @@
             <span class="faq-icon"><i class="fas fa-plus"></i></span>
           </button>
           <div class="faq-answer">
-            Trabajamos con vidrio plano hasta 19 mm de espesor. También ofrecemos vidrio templado, laminado, esmerilado, grabado y espejos biselados en diferentes espesores según la aplicación.
+            Trabajamos con vidrio plano hasta 10 mm de espesor. También ofrecemos vidrio templado, laminado, esmerilado, grabado y espejos biselados en diferentes espesores según la aplicación.
           </div>
         </div>
       </div>
@@ -356,7 +566,10 @@
             <i class="fas fa-envelope"></i> Escribirnos
           </a>
           <a href="https://wa.me/573122017791" target="_blank" class="btn btn-wa btn-lg">
-            <i class="fa-brands fa-whatsapp"></i> Hablar con un Asesor
+            <i class="fa-brands fa-whatsapp"></i> Hablar con Elkin
+          </a>
+          <a href="https://wa.me/573148110468" target="_blank" class="btn btn-wa btn-lg">
+            <i class="fa-brands fa-whatsapp"></i> Hablar con Gonzalo
           </a>
         </div>
       </div>
@@ -364,48 +577,50 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand-main">Vitrialum de Oriente</div>
-          <div class="brand-sub">Vidrio &amp; Aluminio Profesional</div>
-          <p>Soluciones arquitectónicas de precisión en vidrio, aluminio y acero inoxidable para el Oriente Antioqueño y toda la región.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navegación</h4>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="Servicios.html">Servicios</a></li>
-            <li><a href="Nosotros.html">Nosotros</a></li>
-            <li><a href="Galeria.html">Galería</a></li>
-            <li><a href="Contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contacto</h4>
-          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 312 201 7791</span></div>
-          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>elkinantoni@hotmail.com</span></div>
-          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>vitrialum.j.a@hotmail.com</span></div>
-          <div class="footer-contact-item"><i class="fas fa-location-dot"></i><span>Crra 30 #23-12, El Carmen de Viboral, Antioquia</span></div>
-          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 8:00am – 5:30pm</span></div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 <strong>VITRIALUM DE ORIENTE</strong>. Todos los derechos reservados.</span>
-        <div class="footer-socials">
-          <a href="https://www.facebook.com/elkin.osorio.961" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/573122017791" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <footer class="footer">
+        <div class="container">
+              <div class="footer-grid">
+                      <div class="footer-brand">
+                                <div class="brand-main">Vitrialum de Oriente</div>
+                                          <div class="brand-sub">Vidrio &amp; Aluminio Profesional</div>
+                                                    <p>Soluciones arquitectónicas de precisión en vidrio, aluminio y acero inoxidable para el Oriente Antioqueño y toda la región.</p>
+                                                            </div>
+                                                                    <div class="footer-col">
+                                                                              <h4>Navegación</h4>
+                                                                                        <ul>
+                                                                                                    <li><a href="index.html">Inicio</a></li>
+                                                                                                                <li><a href="Servicios.html">Servicios</a></li>
+                                                                                                                            <li><a href="Nosotros.html">Nosotros</a></li>
+                                                                                                                                        <li><a href="Galeria.html">Galería</a></li>
+                                                                                                                                                    <li><a href="Contacto.html">Contacto</a></li>
+                                                                                                                                                              </ul>
+                                                                                                                                                                      </div>
+                                                                                                                                                                              <div class="footer-col">
+                                                                                                                                                                                        <h4>Contacto</h4>
+                                                                                                                                                                                                  <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 312 201 7791</span></div>
+                                                                                                                                                                                                            <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 314 811 0468</span></div>
+                                                                                                                                                                                                                      <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>elkinantoni@hotmail.com</span></div>
+                                                                                                                                                                                                                                <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>vitrialum.j.a@hotmail.com</span></div>
+                                                                                                                                                                                                                                          <div class="footer-contact-item"><i class="fas fa-location-dot"></i><span>Crra 30 #23-12, El Carmen de Viboral, Antioquia</span></div>
+                                                                                                                                                                                                                                                    <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 7:00am – 5:30pm</span></div>
+                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                        <div class="footer-bottom">
+                                                                                                                                                                                                                                                                                <span>© 2026 <strong>VITRIALUM DE ORIENTE</strong>. Todos los derechos reservados.</span>
+                                                                                                                                                                                                                                                                                        <div class="footer-socials">
+                                                                                                                                                                                                                                                                                                  <a href="https://www.facebook.com/elkin.osorio.961" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                                                                                                                                                                                                                                                                                            <a href="https://https://www.facebook.com/Emilianoatehortu" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                                                                                                                                                                                                                                                                                                      <a href="https://wa.me/573122017791" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                                                                                                                                                                                                                                                                                                                      <a href="https://wa.me/573148110468" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                          </footer>
 
-  <!-- AOS -->
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Shared JS -->
   <script src="JS/shared.js"></script>
-  <!-- Page JS -->
   <script src="JS/index.js"></script>
 </body>
 </html>

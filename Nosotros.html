@@ -20,6 +20,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/whatsapp-mobile.css">
   <link rel="stylesheet" href="CSS/Nosotros.css">
 </head>
 
@@ -41,14 +42,19 @@
   <!-- =========================================================
        WHATSAPP FLOAT
        ========================================================= -->
-  <a
-    href="https://wa.me/573122017791"
-    class="whatsapp-float"
-    target="_blank"
-    aria-label="WhatsApp"
-  >
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  <div class="whatsapp-container">
+    <button class="whatsapp-float" id="whatsapp-toggle" aria-label="WhatsApp" aria-expanded="false">
+      <i class="fa-brands fa-whatsapp"></i>
+    </button>
+    <div class="whatsapp-options" id="whatsapp-options">
+      <a href="https://wa.me/573122017791" class="whatsapp-option" target="_blank">
+        <i class="fas fa-user"></i> Elkin
+      </a>
+      <a href="https://wa.me/573148110468" class="whatsapp-option" target="_blank">
+        <i class="fas fa-user"></i> Gonzalo
+      </a>
+    </div>
+  </div>
 
   <!-- =========================================================
        HEADER
@@ -177,14 +183,19 @@
 
     </ul>
 
-    <a
-      href="https://wa.me/573122017791"
-      class="mobile-wa-btn"
-      target="_blank"
-    >
-      <i class="fa-brands fa-whatsapp"></i>
-      Cotizar por WhatsApp
-    </a>
+    <div class="mobile-wa-menu">
+      <button class="mobile-wa-btn" id="mobile-wa-toggle" aria-label="Contactar por WhatsApp" aria-expanded="false">
+        <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+      </button>
+      <div class="mobile-wa-options" id="mobile-wa-options">
+        <a href="https://wa.me/573122017791" class="mobile-wa-option" target="_blank">
+          <i class="fas fa-user"></i> Elkin
+        </a>
+        <a href="https://wa.me/573148110468" class="mobile-wa-option" target="_blank">
+          <i class="fas fa-user"></i> Gonzalo
+        </a>
+      </div>
+    </div>
 
   </div>
 
@@ -284,6 +295,14 @@
             >
               <i class="fas fa-envelope"></i>
               Contáctenos
+              
+
+        <a href="https://wa.me/573122017791" target="_blank" class="btn btn-wa btn-lg">
+          <i class="fa-brands fa-whatsapp"></i> Elkin
+        </a>
+                <a href="https://wa.me/573148110468" target="_blank" class="btn btn-wa btn-lg">
+          <i class="fa-brands fa-whatsapp"></i> Gonzalo
+        </a>
             </a>
 
           </div>
@@ -292,75 +311,51 @@
 
       </div>
 
+
     </section>
 
   </main>
 
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
+  <!-- FOOTER -->
   <footer class="footer">
-
     <div class="container">
-
       <div class="footer-grid">
-
         <div class="footer-brand">
-
-          <div class="brand-main">
-            Vitrialum de Oriente
-          </div>
-
-          <div class="brand-sub">
-            Vidrio &amp; Aluminio Profesional
-          </div>
-
-          <p>
-            Soluciones arquitectónicas en vidrio,
-            aluminio y acero inoxidable.
-          </p>
-
+          <div class="brand-main">Vitrialum de Oriente</div>
+          <div class="brand-sub">Vidrio &amp; Aluminio Profesional</div>
+          <p>Soluciones arquitectónicas de precisión en vidrio, aluminio y acero inoxidable para el Oriente Antioqueño y toda la región.</p>
         </div>
-
         <div class="footer-col">
-
           <h4>Navegación</h4>
-
           <ul>
-
             <li><a href="index.html">Inicio</a></li>
             <li><a href="Servicios.html">Servicios</a></li>
             <li><a href="Nosotros.html">Nosotros</a></li>
             <li><a href="Galeria.html">Galería</a></li>
             <li><a href="Contacto.html">Contacto</a></li>
-
           </ul>
-
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
           <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 312 201 7791</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 314 811 0468</span></div>
           <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>elkinantoni@hotmail.com</span></div>
           <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>vitrialum.j.a@hotmail.com</span></div>
           <div class="footer-contact-item"><i class="fas fa-location-dot"></i><span>Crra 30 #23-12, El Carmen de Viboral, Antioquia</span></div>
-          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 8:00am – 5:30pm · Sáb 7:30am–1:00pm</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 7:00am – 5:30pm</span></div>
         </div>
       </div>
-
-      </div>
-
       <div class="footer-bottom">
+        <span>© 2026 <strong>VITRIALUM DE ORIENTE</strong>. Todos los derechos reservados.</span>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/elkin.osorio.961" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://https://www.facebook.com/Emilianoatehortu" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/573122017791" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/573148110468" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-        <span>
-          © 2026
-          <strong>VITRIALUM DE ORIENTE</strong>.
-          Todos los derechos reservados.
-        </span>
-
+        </div>
       </div>
-
     </div>
-
   </footer>
 
   <!-- =========================================================

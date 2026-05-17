@@ -13,6 +13,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/whatsapp-mobile.css">
   <link rel="stylesheet" href="CSS/servicios.css">
 </head>
 <body>
@@ -26,9 +27,19 @@
   </div>
 
   <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/573122017791" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  <div class="whatsapp-container">
+    <button class="whatsapp-float" id="whatsapp-toggle" aria-label="WhatsApp" aria-expanded="false">
+      <i class="fa-brands fa-whatsapp"></i>
+    </button>
+    <div class="whatsapp-options" id="whatsapp-options">
+      <a href="https://wa.me/573122017791" class="whatsapp-option" target="_blank">
+        <i class="fas fa-user"></i> Elkin
+      </a>
+      <a href="https://wa.me/573148110468" class="whatsapp-option" target="_blank">
+        <i class="fas fa-user"></i> Gonzalo
+      </a>
+    </div>
+  </div>
 
   <!-- HEADER -->
   <header class="header" id="navbar">
@@ -64,9 +75,19 @@
       <li><a href="Galeria.html"   class="mobile-nav-link"><i class="fas fa-images"></i> Galería</a></li>
       <li><a href="Contacto.html"  class="mobile-nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>
     </ul>
-    <a href="https://wa.me/573122017791" class="mobile-wa-btn" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
-    </a>
+    <div class="mobile-wa-menu">
+      <button class="mobile-wa-btn" id="mobile-wa-toggle" aria-label="Contactar por WhatsApp" aria-expanded="false">
+        <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+      </button>
+      <div class="mobile-wa-options" id="mobile-wa-options">
+        <a href="https://wa.me/573122017791" class="mobile-wa-option" target="_blank">
+          <i class="fas fa-user"></i> Elkin
+        </a>
+        <a href="https://wa.me/573148110468" class="mobile-wa-option" target="_blank">
+          <i class="fas fa-user"></i> Gonzalo
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- HERO SM -->
@@ -124,7 +145,11 @@
               <li><div class="service-feature"><i class="fas fa-door-open"></i></div> Puertas batientes y corredizas</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20cabina%20de%20baño" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Cabina
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Cabina Con Elkin
+            </a>
+
+          <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20cabina%20de%20baño" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Cabina Con Gonzalo
             </a>
           </div>
         </div>
@@ -147,7 +172,10 @@
               <li><div class="service-feature"><i class="fas fa-gem"></i></div> Acabado de alta gama</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20fachada%20flotante" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Proyecto Comercial
+              <i class="fa-brands fa-whatsapp"></i> Proyecto Comercial Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20fachada%20flotante" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Proyecto Comercial Con Gonzalo
             </a>
           </div>
         </div>
@@ -170,8 +198,11 @@
               <li><div class="service-feature"><i class="fas fa-building"></i></div> Uso comercial e institucional</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20puertas%20tipo%20banco" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Solicitar Cotización
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Cotización Con Elkin
             </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20puertas%20tipo%20banco" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Cotización Con Gonzalo
+            </a>    
           </div>
         </div>
 
@@ -194,7 +225,10 @@
               <li><div class="service-feature"><i class="fas fa-eye"></i></div> Máxima transparencia visual</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20barandas%20en%20acero%20inoxidable" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Barandas
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Barandas Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20barandas%20en%20acero%20inoxidable" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Barandas Con Gonzalo
             </a>
           </div>
         </div>
@@ -217,7 +251,10 @@
               <li><div class="service-feature"><i class="fas fa-bolt"></i></div> Cierres herméticos de precisión</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20ventanas%20de%20aluminio" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Ventanas
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Ventanas Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20ventanas%20de%20aluminio" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Ventanas Con Gonzalo
             </a>
           </div>
         </div>
@@ -240,7 +277,10 @@
               <li><div class="service-feature"><i class="fas fa-cloud-sun"></i></div> Confort térmico exterior</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20pérgola" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Pérgola
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Pérgola Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20pérgola" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Pérgola Con Gonzalo
             </a>
           </div>
         </div>
@@ -263,7 +303,10 @@
               <li><div class="service-feature"><i class="fas fa-ruler-combined"></i></div> Fabricación totalmente a medida</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vitrinas" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Vitrina
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Vitrina Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vitrinas" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Vitrina Con Gonzalo
             </a>
           </div>
         </div>
@@ -286,7 +329,10 @@
               <li><div class="service-feature"><i class="fas fa-pencil-ruler"></i></div> Diseño personalizado</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20cocina%20o%20closet%20integral" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Diseñar mi Espacio
+              <i class="fa-brands fa-whatsapp"></i> Diseñar mi Espacio Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20cocina%20o%20closet%20integral" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Diseñar mi Espacio Con Gonzalo
             </a>
           </div>
         </div>
@@ -309,7 +355,10 @@
               <li><div class="service-feature"><i class="fas fa-check-circle"></i></div> Certificación de seguridad</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20templado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Templado
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Templado Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20templado" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Templado Con Gonzalo
             </a>
           </div>
         </div>
@@ -332,7 +381,10 @@
               <li><div class="service-feature"><i class="fas fa-layer-group"></i></div> Película PVB multi-capa</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20información%20sobre%20vidrio%20laminado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Más Información
+              <i class="fa-brands fa-whatsapp"></i> Más Información Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20información%20sobre%20vidrio%20laminado" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Más Información Con Gonzalo
             </a>
           </div>
         </div>
@@ -355,7 +407,10 @@
               <li><div class="service-feature"><i class="fas fa-palette"></i></div> Acabado mate elegante</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20esmerilado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Personalizar
+              <i class="fa-brands fa-whatsapp"></i> Personalizar Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20esmerilado" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Personalizar Con Gonzalo
             </a>
           </div>
         </div>
@@ -378,7 +433,10 @@
               <li><div class="service-feature"><i class="fas fa-star"></i></div> Acabado artesanal premium</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20grabado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Diseñar Grabado
+              <i class="fa-brands fa-whatsapp"></i> Diseñar Grabado Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20grabado" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Diseñar Grabado Con Gonzalo
             </a>
           </div>
         </div>
@@ -401,7 +459,10 @@
               <li><div class="service-feature"><i class="fas fa-magic"></i></div> Retroiluminación LED opcional</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20espejos%20biselados" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos Con Elkin
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20espejos%20biselados" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos Con Gonzalo
             </a>
           </div>
         </div>
@@ -424,7 +485,10 @@
               <li><div class="service-feature"><i class="fas fa-truck"></i></div> Entrega en toda la región</li>
             </ul>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20plano" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Solicitar Medidas
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Medidas Con Elkin 
+            </a>
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20plano" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Medidas Con Gonzalo
             </a>
           </div>
         </div>
@@ -532,7 +596,10 @@
               <i class="fas fa-envelope"></i> Enviar Consulta
             </a>
             <a href="https://wa.me/573122017791?text=Hola,%20quiero%20asesoría%20técnica%20sobre%20un%20proyecto" target="_blank" class="btn btn-wa btn-lg">
-              <i class="fa-brands fa-whatsapp"></i> Hablar con un Especialista
+              <i class="fa-brands fa-whatsapp"></i> Hablar con Elkin
+            </a>
+                        <a href="https://wa.me/573148110468?text=Hola,%20quiero%20asesoría%20técnica%20sobre%20un%20proyecto" target="_blank" class="btn btn-wa btn-lg">
+              <i class="fa-brands fa-whatsapp"></i> Hablar con Gonzalo
             </a>
           </div>
         </div>
@@ -563,21 +630,25 @@
         <div class="footer-col">
           <h4>Contacto</h4>
           <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 312 201 7791</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 314 811 0468</span></div>
           <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>elkinantoni@hotmail.com</span></div>
           <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>vitrialum.j.a@hotmail.com</span></div>
           <div class="footer-contact-item"><i class="fas fa-location-dot"></i><span>Crra 30 #23-12, El Carmen de Viboral, Antioquia</span></div>
-          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 8:00am – 5:30pm</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Vie 7:00am – 5:30pm</span></div>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 <strong>VITRIALUM DE ORIENTE</strong>. Todos los derechos reservados.</span>
         <div class="footer-socials">
           <a href="https://www.facebook.com/elkin.osorio.961" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/emilianoatehortu" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://wa.me/573122017791" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/573148110468" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
   </footer>
+
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="JS/shared.js"></script>
