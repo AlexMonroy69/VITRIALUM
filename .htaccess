@@ -1,0 +1,10 @@
+<IfModule mod_authz_core.c>
+    <FilesMatch "^robots\.txt$">
+        Require all granted
+    </FilesMatch>
+</IfModule>
+
+# Permitir explícitamente al bot de Facebook/WhatsApp
+SetEnvIf User-Agent "facebookexternalhit" de_facebook
+Order Deny,Allow
+Allow from env=de_facebook
