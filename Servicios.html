@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Servicios especializados de VITRIALUM DE ORIENTE: cabinas de baño, fachadas flotantes, barandas en acero inoxidable, ventanas de aluminio, pérgolas, cocinas, closets y más.">
+  <meta name="description" content="Servicios especializados de VITRIALUM DE ORIENTE: cabinas de baño, fachadas flotantes, barandas en acero inoxidable, ventanas de aluminio, pérgolas, espejos y más.">
   <title>Servicios | VITRIALUM DE ORIENTE</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,19 @@
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" href="CSS/whatsapp-mobile.css">
   <link rel="stylesheet" href="CSS/servicios.css">
+
+  <style>
+    /* Button group spacing improvement */
+    .service-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .service-buttons .btn {
+      margin-top: 0 !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -101,7 +114,7 @@
 
   <main>
 
-    <!-- INTRO + FILTER -->
+    <!-- INTRO -->
     <section class="section-padding">
       <div class="container">
 
@@ -111,17 +124,6 @@
           <p style="color:var(--text-muted);margin-top:16px;max-width:640px;margin-left:auto;margin-right:auto;font-size:0.93rem;">
             Desde cabinas de baño residenciales hasta complejas fachadas corporativas. Cada solución es fabricada e instalada con la más alta precisión técnica.
           </p>
-        </div>
-
-        <!-- Filter tabs -->
-        <div style="display:flex;justify-content:center;margin-bottom:16px;" data-aos="fade-up">
-          <div class="filter-tabs">
-            <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="vidrio">Vidrio</button>
-            <button class="filter-btn" data-filter="aluminio">Aluminio</button>
-            <button class="filter-btn" data-filter="acero">Acero Inox.</button>
-            <button class="filter-btn" data-filter="interiores">Interiores</button>
-          </div>
         </div>
 
         <!-- ============ SERVICE ROWS ============ -->
@@ -144,20 +146,21 @@
               <li><div class="service-feature"><i class="fas fa-expand"></i></div> Sistema frameless y semienmarque</li>
               <li><div class="service-feature"><i class="fas fa-door-open"></i></div> Puertas batientes y corredizas</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20cabina%20de%20baño" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Cabina Con Elkin
-            </a>
-
-          <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20cabina%20de%20baño" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Cabina Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20cabina%20de%20ba%C3%B1o" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Cabina Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20cabina%20de%20ba%C3%B1o" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Cabina Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- 2. Fachadas Flotantes -->
         <div class="service-row reverse" data-category="vidrio" data-aos="fade-up">
           <div class="service-img-wrap">
-            <img src="IMG/facahdasFlotantes.jpg" alt="Fachadas Flotantes">
+            <img src="IMG/facahdasFlotantes.webp" alt="Fachadas Flotantes">
           </div>
           <div class="service-info">
             <span class="service-tag">Arquitectura Comercial</span>
@@ -171,12 +174,14 @@
               <li><div class="service-feature"><i class="fas fa-wind"></i></div> Resistencia estructural al viento</li>
               <li><div class="service-feature"><i class="fas fa-gem"></i></div> Acabado de alta gama</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20fachada%20flotante" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Proyecto Comercial Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20fachada%20flotante" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Proyecto Comercial Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20fachada%20flotante" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Proyecto Comercial Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20fachada%20flotante" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Proyecto Comercial Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -197,12 +202,14 @@
               <li><div class="service-feature"><i class="fas fa-ruler-combined"></i></div> Fabricación a medida</li>
               <li><div class="service-feature"><i class="fas fa-building"></i></div> Uso comercial e institucional</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20puertas%20tipo%20banco" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Solicitar Cotización Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20puertas%20tipo%20banco" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Solicitar Cotización Con Gonzalo
-            </a>    
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20puertas%20tipo%20banco" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Solicitar Cotización Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20puertas%20tipo%20banco" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Solicitar Cotización Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -224,12 +231,14 @@
               <li><div class="service-feature"><i class="fas fa-stairs"></i></div> Escaleras y balcones</li>
               <li><div class="service-feature"><i class="fas fa-eye"></i></div> Máxima transparencia visual</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20barandas%20en%20acero%20inoxidable" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Barandas Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20barandas%20en%20acero%20inoxidable" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Barandas Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20barandas%20en%20acero%20inoxidable" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Barandas Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20barandas%20en%20acero%20inoxidable" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Barandas Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -250,12 +259,14 @@
               <li><div class="service-feature"><i class="fas fa-paint-roller"></i></div> Colores anodizados y lacados</li>
               <li><div class="service-feature"><i class="fas fa-bolt"></i></div> Cierres herméticos de precisión</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20ventanas%20de%20aluminio" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Ventanas Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20ventanas%20de%20aluminio" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Ventanas Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20ventanas%20de%20aluminio" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Ventanas Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20ventanas%20de%20aluminio" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Ventanas Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -276,19 +287,21 @@
               <li><div class="service-feature"><i class="fas fa-hammer"></i></div> Estructura robusta en aluminio</li>
               <li><div class="service-feature"><i class="fas fa-cloud-sun"></i></div> Confort térmico exterior</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20pérgola" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Pérgola Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20pérgola" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Pérgola Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20p%C3%A9rgola" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Pérgola Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20p%C3%A9rgola" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Pérgola Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- 7. Vitrinas en Aluminio y Madera -->
+        <!-- 7. Cerramientos de Cristal -->
         <div class="service-row" data-category="aluminio" data-aos="fade-up">
           <div class="service-img-wrap">
-            <img src="IMG/cerramiento.jpg" alt="Vitrinas en Aluminio y Madera">
+            <img src="IMG/cerramiento.jpg" alt="Cerramientos de Cristal">
           </div>
           <div class="service-info">
             <span class="service-tag">Sistemas Panorámicos</span>
@@ -302,38 +315,42 @@
               <li><div class="service-feature"><i class="fas fa-lock"></i></div> Sistemas de cierre seguros</li>
               <li><div class="service-feature"><i class="fas fa-ruler-combined"></i></div> Fabricación totalmente a medida</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vitrinas" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Vitrina Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vitrinas" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Vitrina Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20un%20cerramiento%20de%20cristal" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Cerramiento Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20un%20cerramiento%20de%20cristal" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Cerramiento Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- 8. Cocinas y Closets Integrales -->
+        <!-- 8. Espejo al Corte — FIXED -->
         <div class="service-row reverse" data-category="interiores" data-aos="fade-up">
           <div class="service-img-wrap">
-            <img src="IMG/cocina.webp" alt="Espejo al corte">
+            <img src="IMG/cocina.webp" alt="Espejo al Corte">
           </div>
           <div class="service-info">
-            <span class="service-tag">Diseño de Interiores</span>
-            <h2 class="service-title">espejo al corte</h2>
+            <span class="service-tag">Espejos Arquitectónicos</span>
+            <h2 class="service-title">Espejo al Corte</h2>
             <p class="service-desc">
-              Diseñamos y fabricamos cocinas y closets integrales combinando aluminio, madera y vidrio. Cada proyecto es personalizado según el espacio disponible y el estilo del cliente, desde diseños minimalistas hasta propuestas más elaboradas.
+              Suministramos y cortamos espejos con precisión milimétrica para todo tipo de aplicaciones residenciales y comerciales. Cada pieza es elaborada con vidrio de alta reflectividad, cantos pulidos a diamante y acabado libre de distorsiones. Compatibles con sistemas de retroiluminación LED para entornos de alto nivel.
             </p>
             <ul class="service-features">
-              <li><div class="service-feature"><i class="fas fa-kitchen-set"></i></div> Cocinas modulares integrales</li>
-              <li><div class="service-feature"><i class="fas fa-tshirt"></i></div> Closets y vestidores a medida</li>
-              <li><div class="service-feature"><i class="fas fa-palette"></i></div> Múltiples acabados disponibles</li>
-              <li><div class="service-feature"><i class="fas fa-pencil-ruler"></i></div> Diseño personalizado</li>
+              <li><div class="service-feature"><i class="fas fa-cut"></i></div> Cortes personalizados a medida exacta</li>
+              <li><div class="service-feature"><i class="fas fa-gem"></i></div> Cantos pulidos y biselados</li>
+              <li><div class="service-feature"><i class="fas fa-building"></i></div> Aplicaciones residenciales y comerciales</li>
+              <li><div class="service-feature"><i class="fas fa-lightbulb"></i></div> Compatible con retroiluminación LED</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20una%20cocina%20o%20closet%20integral" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Diseñar mi Espacio Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20una%20cocina%20o%20closet%20integral" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Diseñar mi Espacio Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20un%20espejo%20al%20corte" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejo Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20un%20espejo%20al%20corte" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejo Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -354,12 +371,14 @@
               <li><div class="service-feature"><i class="fas fa-expand-arrows-alt"></i></div> Espesores de 4 a 19 mm</li>
               <li><div class="service-feature"><i class="fas fa-check-circle"></i></div> Certificación de seguridad</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20templado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Templado Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20templado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Templado Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20templado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Templado Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20templado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Templado Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -380,12 +399,14 @@
               <li><div class="service-feature"><i class="fas fa-user-shield"></i></div> Seguridad ante rotura</li>
               <li><div class="service-feature"><i class="fas fa-layer-group"></i></div> Película PVB multi-capa</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20información%20sobre%20vidrio%20laminado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Más Información Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20información%20sobre%20vidrio%20laminado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Más Información Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20vidrio%20laminado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Más Información Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20vidrio%20laminado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Más Información Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -406,12 +427,14 @@
               <li><div class="service-feature"><i class="fas fa-pen-nib"></i></div> Diseños y logotipos personalizados</li>
               <li><div class="service-feature"><i class="fas fa-palette"></i></div> Acabado mate elegante</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20esmerilado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Personalizar Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20esmerilado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Personalizar Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20esmerilado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Personalizar Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20esmerilado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Personalizar Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -432,12 +455,14 @@
               <li><div class="service-feature"><i class="fas fa-home"></i></div> Aplicaciones residenciales</li>
               <li><div class="service-feature"><i class="fas fa-star"></i></div> Acabado artesanal premium</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20grabado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Diseñar Grabado Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20grabado" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Diseñar Grabado Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20grabado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Diseñar Grabado Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20grabado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Diseñar Grabado Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -458,38 +483,184 @@
               <li><div class="service-feature"><i class="fas fa-ruler-combined"></i></div> Fabricación a medida</li>
               <li><div class="service-feature"><i class="fas fa-magic"></i></div> Retroiluminación LED opcional</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20espejos%20biselados" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos Con Elkin
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20espejos%20biselados" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20espejos%20biselados" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20espejos%20biselados" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- 14. Vidrio Plano hasta 19mm -->
+        <!-- 14. Vidrio Plano de 10 mm — RENAMED & UPDATED -->
         <div class="service-row reverse" data-category="vidrio" data-aos="fade-up">
           <div class="service-img-wrap">
-            <img src="IMG/PlanoTemplado.webp" alt="Vidrio Plano hasta 19mm">
+            <img src="IMG/vidrioplano.jpg" alt="Vidrio Plano de 10 mm">
           </div>
           <div class="service-info">
             <span class="service-tag">Suministro Especializado</span>
-            <h2 class="service-title">Vidrio Plano hasta 19 mm</h2>
+            <h2 class="service-title">Vidrio Plano de 10 mm</h2>
             <p class="service-desc">
-              Suministro y corte de vidrio plano en espesores desde 3 mm hasta 19 mm para todo tipo de aplicaciones estructurales, decorativas e industriales. Corte por computador con precisión milimétrica y pulido de cantos a diamante.
+              El vidrio plano de 10 mm representa el estándar arquitectónico de alto desempeño, combinando grosor estructural con versatilidad estética. Ideal para mesas, divisiones, fachadas y aplicaciones decorativas de primer nivel. Cada pieza es procesada con corte CNC de precisión y cantos pulidos a diamante para un acabado impecable.
             </p>
             <ul class="service-features">
-              <li><div class="service-feature"><i class="fas fa-ruler"></i></div> Espesores 3 – 19 mm</li>
-              <li><div class="service-feature"><i class="fas fa-microchip"></i></div> Corte computarizado CNC</li>
-              <li><div class="service-feature"><i class="fas fa-gem"></i></div> Pulido de cantos a diamante</li>
-              <li><div class="service-feature"><i class="fas fa-truck"></i></div> Entrega en toda la región</li>
+              <li><div class="service-feature"><i class="fas fa-microchip"></i></div> Corte CNC computarizado de precisión</li>
+              <li><div class="service-feature"><i class="fas fa-gem"></i></div> Cantos pulidos a diamante</li>
+              <li><div class="service-feature"><i class="fas fa-layer-group"></i></div> Aplicaciones decorativas y estructurales</li>
+              <li><div class="service-feature"><i class="fas fa-truck"></i></div> Entrega segura en toda la región</li>
             </ul>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20plano" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Solicitar Medidas Con Elkin 
-            </a>
-            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20plano" target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> Solicitar Medidas Con Gonzalo
-            </a>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20plano%20de%2010%20mm" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Solicitar Medidas Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20plano%20de%2010%20mm" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Solicitar Medidas Con Gonzalo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15. Sistema Antiruido Termoacústico — NEW -->
+        <div class="service-row" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/antiruido.jpeg" alt="Sistema Antiruido Termoacústico">
+            <span class="service-tag-overlay">Alta Tecnología</span>
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Confort y Bienestar</span>
+            <h2 class="service-title">Sistema Antiruido Termoacústico</h2>
+            <p class="service-desc">
+              Sistema europeo de acristalamiento de alto rendimiento compuesto por dos hojas de vidrio laminado separadas por una cámara sellada rellena de gas argón. Esta combinación ofrece un aislamiento acústico y térmico excepcional, eliminando condensación, humedad interior y pérdidas energéticas. Una solución de arquitectura premium para entornos urbanos, residencias de lujo y edificios corporativos de exigencia máxima.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-volume-mute"></i></div> Aislamiento acústico de alto espectro</li>
+              <li><div class="service-feature"><i class="fas fa-thermometer-half"></i></div> Eficiencia térmica con gas argón</li>
+              <li><div class="service-feature"><i class="fas fa-tint-slash"></i></div> Elimina condensación y humedad</li>
+              <li><div class="service-feature"><i class="fas fa-globe-europe"></i></div> Tecnología y normativa europea</li>
+            </ul>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20el%20sistema%20antiruido%20termoacústico" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20el%20sistema%20antiruido%20termoacústico" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema Con Gonzalo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16. Vidrio VH con Cámara — NEW -->
+        <div class="service-row reverse" data-category="vidrio" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/vh con cámara.jpeg" alt="Vidrio VH con Cámara">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Arquitectura de Alto Desempeño</span>
+            <h2 class="service-title">Vidrio VH con Cámara</h2>
+            <p class="service-desc">
+              Vidrio aislante laminado con cámara de aire hermética, desarrollado bajo estándares europeos de eficiencia energética. Combina las propiedades del vidrio laminado de seguridad con el control térmico y acústico de los sistemas de doble acristalamiento. La solución definitiva para fachadas, ventanería de alto tráfico y proyectos arquitectónicos que exigen rendimiento y elegancia sin concesiones.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-layer-group"></i></div> Vidrio laminado aislante de cámara</li>
+              <li><div class="service-feature"><i class="fas fa-leaf"></i></div> Alta eficiencia energética</li>
+              <li><div class="service-feature"><i class="fas fa-volume-down"></i></div> Aislamiento acústico reforzado</li>
+              <li><div class="service-feature"><i class="fas fa-city"></i></div> Aplicaciones arquitectónicas premium</li>
+            </ul>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20vidrio%20VH%20con%20cámara" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Vidrio VH Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20vidrio%20VH%20con%20cámara" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Vidrio VH Con Gonzalo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 17. Espejo Pulido y Brillado — NEW -->
+        <div class="service-row" data-category="interiores" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/pulido y brillado.jpg" alt="Espejo Pulido y Brillado">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Acabado de Lujo</span>
+            <h2 class="service-title">Espejo Pulido y Brillado</h2>
+            <p class="service-desc">
+              Espejos de alta reflectividad con cantos pulidos y brillados a máquina para un acabado premium de nivel joyero. El proceso de brillado elimina toda aspereza visual en los bordes, otorgando a cada pieza una presencia elegante y segura al tacto. Perfectos para residencias de lujo, hoteles, consultorios y espacios comerciales de alto diseño.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-gem"></i></div> Cantos pulidos y brillados a máquina</li>
+              <li><div class="service-feature"><i class="fas fa-star"></i></div> Acabado premium libre de imperfecciones</li>
+              <li><div class="service-feature"><i class="fas fa-home"></i></div> Uso residencial y comercial</li>
+              <li><div class="service-feature"><i class="fas fa-ruler-combined"></i></div> Fabricación a medida exacta</li>
+            </ul>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20un%20espejo%20pulido%20y%20brillado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejo Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20un%20espejo%20pulido%20y%20brillado" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejo Con Gonzalo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 18. Espejos Flotantes — NEW -->
+        <div class="service-row reverse" data-category="interiores" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/espejoflotante.webp" alt="Espejos Flotantes">
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Diseño Minimalista</span>
+            <h2 class="service-title">Espejos Flotantes</h2>
+            <p class="service-desc">
+              Espejos diseñados bajo el concepto de levitación visual, instalados mediante sistemas de anclaje oculto que eliminan toda la herrería visible. El resultado es una superficie reflectante limpia que parece suspendida en el muro, creando un efecto arquitectónico de gran impacto. Compatible con retroiluminación LED perimetral para potenciar el efecto flotante en cualquier ambiente.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-border-none"></i></div> Sistema de anclaje 100% oculto</li>
+              <li><div class="service-feature"><i class="fas fa-magic"></i></div> Efecto visual de levitación</li>
+              <li><div class="service-feature"><i class="fas fa-th-large"></i></div> Estilo moderno y minimalista</li>
+              <li><div class="service-feature"><i class="fas fa-lightbulb"></i></div> Compatible con retroiluminación LED</li>
+            </ul>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20espejos%20flotantes" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos Flotantes Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20espejos%20flotantes" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejos Flotantes Con Gonzalo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 19. Espejos con Iluminación — NEW -->
+        <div class="service-row" data-category="interiores" data-aos="fade-up">
+          <div class="service-img-wrap">
+            <img src="IMG/espejoconiluminacion.jpg" alt="Espejos con Iluminación LED">
+            <span class="service-tag-overlay">Tendencia Premium</span>
+          </div>
+          <div class="service-info">
+            <span class="service-tag">Iluminación Integrada</span>
+            <h2 class="service-title">Espejos con Iluminación</h2>
+            <p class="service-desc">
+              Espejos de diseño contemporáneo con iluminación LED integrada de bajo consumo energético. La tira luminosa perimetral o retroiluminada crea una atmósfera cálida y funcional, perfecta para baños, tocadores, vestidores y locales comerciales. Cada espejo es fabricado a medida con selección de temperatura de color según el ambiente.
+            </p>
+            <ul class="service-features">
+              <li><div class="service-feature"><i class="fas fa-bolt"></i></div> LED de bajo consumo integrado</li>
+              <li><div class="service-feature"><i class="fas fa-sliders-h"></i></div> Temperatura de color seleccionable</li>
+              <li><div class="service-feature"><i class="fas fa-bath"></i></div> Baños, tocadores y vestidores</li>
+              <li><div class="service-feature"><i class="fas fa-store"></i></div> Aplicaciones comerciales y retail</li>
+            </ul>
+            <div class="service-buttons">
+              <a href="https://wa.me/573122017791?text=Hola,%20quiero%20cotizar%20espejos%20con%20iluminaci%C3%B3n%20LED" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejo LED Con Elkin
+              </a>
+              <a href="https://wa.me/573148110468?text=Hola,%20quiero%20cotizar%20espejos%20con%20iluminaci%C3%B3n%20LED" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Espejo LED Con Gonzalo
+              </a>
+            </div>
           </div>
         </div>
 
@@ -595,10 +766,10 @@
             <a href="Contacto.html" class="btn btn-outline-white btn-lg">
               <i class="fas fa-envelope"></i> Enviar Consulta
             </a>
-            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20asesoría%20técnica%20sobre%20un%20proyecto" target="_blank" class="btn btn-wa btn-lg">
+            <a href="https://wa.me/573122017791?text=Hola,%20quiero%20asesor%C3%ADa%20técnica%20sobre%20un%20proyecto" target="_blank" class="btn btn-wa btn-lg">
               <i class="fa-brands fa-whatsapp"></i> Hablar con Elkin
             </a>
-                        <a href="https://wa.me/573148110468?text=Hola,%20quiero%20asesoría%20técnica%20sobre%20un%20proyecto" target="_blank" class="btn btn-wa btn-lg">
+            <a href="https://wa.me/573148110468?text=Hola,%20quiero%20asesor%C3%ADa%20técnica%20sobre%20un%20proyecto" target="_blank" class="btn btn-wa btn-lg">
               <i class="fa-brands fa-whatsapp"></i> Hablar con Gonzalo
             </a>
           </div>
@@ -630,7 +801,7 @@
         <div class="footer-col">
           <h4>Contacto</h4>
           <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 312 201 7791</span></div>
-                    <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 314 811 0468</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(+57) 314 811 0468</span></div>
           <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>elkinantoni@hotmail.com</span></div>
           <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>vitrialum.j.a@hotmail.com</span></div>
           <div class="footer-contact-item"><i class="fas fa-location-dot"></i><span>Crra 30 #23-12, El Carmen de Viboral, Antioquia</span></div>
@@ -641,14 +812,13 @@
         <span>© 2026 <strong>VITRIALUM DE ORIENTE</strong>. Todos los derechos reservados.</span>
         <div class="footer-socials">
           <a href="https://www.facebook.com/elkin.osorio.961" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.facebook.com/emilianoatehortu" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/Emilianoatehortu" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://wa.me/573122017791" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           <a href="https://wa.me/573148110468" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
   </footer>
-
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="JS/shared.js"></script>
