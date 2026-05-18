@@ -53,3 +53,32 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
 });
+
+// ==========================================================================
+// Control de Seguridad - Checkbox de Privacidad (Habeas Data)
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", function () {
+  const privacyCheck = document.getElementById("privacy_check");
+  const submitBtn = document.getElementById("submit-btn");
+  const contactForm = document.getElementById("contact-form");
+
+  if (privacyCheck && submitBtn && contactForm) {
+    // 1. Estado inicial: Desactivar el botón si la casilla está desmarcada
+    submitBtn.disabled = !privacyCheck.checked;
+
+    // 2. Escuchar cambios en el checkbox
+    privacyCheck.addEventListener("change", function () {
+      submitBtn.disabled = !this.checked;
+    });
+
+    // 3. Interceptar el envío como doble seguridad
+    contactForm.addEventListener("submit", function (e) {
+      if (!privacyCheck.checked) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert("Debe aceptar la Política de Tratamiento de Datos Personales para poder enviar la consulta.");
+        return false;
+      }
+    }, true); // El 'true' asegura prioridad sobre otras funciones de envío
+  }
+});

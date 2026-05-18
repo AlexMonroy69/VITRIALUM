@@ -262,3 +262,16 @@ select.form-control { cursor: pointer; }
   .info-card { padding: 36px 28px; }
   .map-wrap { height: 360px; border-radius: var(--radius-lg); }
 }
+
+
+/* ==========================================================================
+   Validación del Botón de Envío (Política de Privacidad)
+   ========================================================================== */
+.form-submit:disabled {
+  background-color: #cbd5e1 !important;
+  color: #64748b !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  opacity: 0.7;
+  transform: none !important; /* Quita animaciones de hover si existían */
+}
