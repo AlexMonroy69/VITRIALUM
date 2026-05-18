@@ -1112,3 +1112,14 @@ ul {
   background: var(--primary-dark);
   transform: translateY(-3px);
 }
+
+/* ==========================================
+   FIJAR MENÚ MÓVIL AL HACER SCROLL
+   ========================================== */
+#mobile-menu.mobile-menu.open {
+    position: fixed !important;
+    top: 67px !important; /* Ajusta este número si queda muy arriba o muy abajo de la barra azul */
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+}
